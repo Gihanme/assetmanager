@@ -31,16 +31,16 @@ input[type="password"]:focus,
 textarea:focus, 
 textarea.form-control:focus {
 	outline: 0;
-	background: #fff;
+	background: #000;
     border: 3px solid #ccc;
     -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
 }
 
 input[type="text"]:-moz-placeholder, input[type="password"]:-moz-placeholder, 
-textarea:-moz-placeholder, textarea.form-control:-moz-placeholder { color: #888; }
+textarea:-moz-placeholder, textarea.form-control:-moz-placeholder { color: #000; }
 
 input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, 
-textarea:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder { color: #888; }
+textarea:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder { color: #000; }
 
 input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, 
 textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder { color: #888; }
@@ -52,7 +52,7 @@ button.btn {
     margin: 0;
     padding: 0 20px;
     vertical-align: middle;
-    background: #702da5;
+    background: #0c68a3;
     border: 0;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -71,4 +71,4 @@ button.btn:active { outline: 0; opacity: 0.6; color: #fff; -moz-box-shadow: none
 
 button.btn:focus { outline: 0; opacity: 0.6; background: #4aaf51; color: #fff; }
 
-button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; background: #4aaf51; color: #fff; }
+button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; background: #4d4d4d; color: #fff; }

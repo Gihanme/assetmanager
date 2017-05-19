@@ -44,12 +44,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo" width="100" height="100"></a>
                 </div>
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.php">Home</a></li>
+                        <!---<li><a href="index.php">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
                        <!-- <li class="active"><a href="services.html">Services</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
@@ -121,12 +121,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2016 UCSC All Rights Reserved.
+                    &copy; 2017 UCSC All Rights Reserved.
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>                        
+                        <li></li>                        
                     </ul>
                 </div>
             </div>
