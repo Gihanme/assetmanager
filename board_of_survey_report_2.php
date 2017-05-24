@@ -255,7 +255,7 @@ if (isset($_POST['div']) and isset($_POST['room']) and isset($_POST['year'])){
                                 document.getElementById("divi_room_select").submit();
                           }
                           function revalue_direct(){
-                                document.getElementById("divi_room_select").action="re_evaluate.php";
+                                document.getElementById("divi_room_select").action="reevaluate.php";
                                 document.getElementById("divi_room_select").submit();
                               
                           }
