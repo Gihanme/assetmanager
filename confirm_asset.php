@@ -1,15 +1,25 @@
-<?php
-require "function.php";
-require_once ("conection.php");
+<?php 
+ include "function.php"; 
+ if (!isset($_SESSION['user_details'])){     
+     header("location:login.php");     
+     exit(); 
+     
+ }
+
 
 $log = new FAssetClerk();
+
+$res = $log->getUnconfirmed();
+
 $user_details = $_SESSION['user_details']; $level = $log->retrieve_user_level_name($user_details['user_level']);
+$level = $log->retrieve_user_level_name($user_details['user_level']);
 $first_name = $user_details['first_name'];
 $last_name = $user_details['last_name'];
 
-if ($user_details['user_level'] != "system_admin"){
+if ($user_details['user_level'] != "electrician"){
     header("location:login.php");
 }
+
 
 ?>
 
@@ -44,7 +54,6 @@ if ($user_details['user_level'] != "system_admin"){
 
   <script src="js/jquery.min.js"></script>
 
-
   <!--[if lt IE 9]>
         <script src="../assets/js/ie8-responsive-file-warning.js"></script>
         <![endif]-->
@@ -78,7 +87,8 @@ if ($user_details['user_level'] != "system_admin"){
             </div>
             <div class="profile_info">
               <span>Welcome,</span>
-              <h2><?php echo $first_name;?></h2>               <span>(<?php echo $level;?>)</span>
+              <h2><?php echo $first_name;?></h2>               
+              <span>(<?php echo $level;?>)</span>
             </div>
           </div>
           <!-- /menu prile quick info -->
@@ -90,24 +100,37 @@ if ($user_details['user_level'] != "system_admin"){
 
             <div class="menu_section">
            <!--   <h3>General</h3> -->
-             <ul class="nav side-menu">
-		<li><a href="createDivision.php"><i class="fa fa-building"></i> Create Division </span></a></li>
-                <li><a href="divisionDetails.php"><i class="fa fa-building"></i> View Divisions </span></a></li>
-                <li><a href="createRoom.php"><i class="fa fa-building"></i> Create Room </span></a></li>
-                <li><a href="roomdetails.php"><i class="fa fa-building"></i> View Rooms </span></a></li>		
-                <li><a href="createuser.php"><i class="fa fa-user"></i> Create User </span></a></li>
-                <li><a href="userDetails.php"><i class="fa fa-user"></i> View Users </span></a></li>
-                <li><a href="create_itemcategory.php"><i class="fa fa-user"></i> Create asset category</a></li>
-                <li><a href="itemcategorydetails.php"><i class="fa fa-user"></i> View asset category</a></li>
-                <li><a href="create_assettype.php"><i class="fa fa-user"></i> Create Asset Type</a></li>
-                <li><a href="assettypedetails.php"><i class="fa fa-user"></i>View Asset Type</a></li>
+              <ul class="nav side-menu">
+			  
+            
+				<li><a href="assetclerk.php"><i class="fa fa-home"></i> Home </span></a></li>
+				<li><a href="addasset.php"><i class="fa fa-desktop"></i> Add Asset </span></a></li>
+				<li><a href="viewasset.php"><i class="fa fa-eye"></i> View Asset </span></a></li>
+				
+				
+				
                </ul>
             </div>
 
           </div>
           <!-- /sidebar menu -->
 
-         
+          <!-- /menu footer buttons -->
+          <div class="sidebar-footer hidden-small">
+            <a data-toggle="tooltip" data-placement="top" title="Settings">
+              <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+              <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="Lock">
+              <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="Logout">
+              <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+            </a>
+          </div>
+          <!-- /menu footer buttons -->
         </div>
       </div>
 
@@ -121,9 +144,9 @@ if ($user_details['user_level'] != "system_admin"){
             </div>
 
             <ul class="nav navbar-nav navbar-right">
-			<li class="">
+              <li class="">
                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                 <?php echo "$first_name $last_name";?>
+                  <img src="images/img.jpg" alt=""><?php echo "$first_name $last_name";?>
                   <span class=" fa fa-angle-down"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -136,7 +159,6 @@ if ($user_details['user_level'] != "system_admin"){
                   </li>
                 </ul>
               </li>
-              
 
               <!--<li role="presentation" class="dropdown">
                 <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
@@ -219,7 +241,6 @@ if ($user_details['user_level'] != "system_admin"){
 			-->
 			
           </div>
-            <form name="createUser" method="post" action="insertUser.php">
           <div class="clearfix"></div>
 
           <div class="row">
@@ -227,144 +248,56 @@ if ($user_details['user_level'] != "system_admin"){
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2> Create User</h2>
-                  
+                  <h2> View Assets </h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Settings 1</a>
+                        </li>
+                        <li><a href="#">Settings 2</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                  <script>
-                      function disable(){
-                          
-                          var e= document.getElementById("user_type");
-                          var div = document.getElementById("user_division");
-                          var row = document.getElementById("disappear_row");
-                          var user= e.options[e.selectedIndex].value;
-                          if (user == "div_asset_clerk"){
-                              
-                              div.disabled = false;
-                          }
-                          else{
-                              row.style="display:none";
-                              div.style= "display:none";
-                              div.value = "FD";
-                          }
-                      }
-                  </script>
+                  
                   <table id="datatable" class="table table-striped table-bordered">
                     <thead>
+					<th align="style="justify"><strong >&nbsp;&nbsp;Asset Name </strong></th>
+					<th align="style="justify"><strong >&nbsp;&nbsp;Barcode No </strong></th>
+					<th align="style="justify"><strong >&nbsp;&nbsp;Serial No </strong></th>
+					<th align="style="justify"><strong >&nbsp;&nbsp;Asset code </strong></th>
+					<th align="style="justify"><strong >&nbsp;&nbsp;Division </strong></th>
+					<th align="style="justify"><strong >&nbsp;&nbsp;Room </strong></th>
                       
                     </thead>
 
 
                     <tbody>
-
-                    <tr>
-                        <td align="style="justify"><strong >&nbsp;&nbsp;Email Address </strong></td>
-                        <td><input type="email" name="email" class="form-control" value="" required/></td>
-
-
-                    </tr>
-
-                    <tr>
-                        <td align="style="justify"><strong >&nbsp;&nbsp;Password </strong></td>
-                        <td><input type="password" name="password" class="form-control" value="" required/></td>
-
-
-                    </tr>
-
-                <tr >
-                    <td align="style=justify    "><strong >&nbsp;&nbsp;User Type </strong></td>
-                    <td>
-                        <select id="user_type" class="form-control" name="user_type" onchange="disable()">
-                            <option value="div_asset_clerk">Divisional Asset Clerk</option>
-                            <option value="bursar">Bursar</option>
-                            <option value="dp_registrar">Dept. Registrar</option>
-                            <option value="asset_clerk">Asset clerk</option>
-                            <option value="system_admin">System Administrator</option>
-                            <option value="temp_user">Temporary User</option>
-                            <option value="electrician">Electrician</option>
-                            
-                        </select>
-                    </td>      
-                </tr>
+			
+                <?php
+                while ($array = $res->fetch_assoc()){	
+                echo '<tr><td><input type="text" class="form-control" value="'.$array['Asset_Name'].'"/></td>'
+                . '<td><input type="text" class="form-control" value="'.$array['Barcode_No'].'"/></td>'
+                        . '<td><input type="text" class="form-control" value="'.$array['Serial_No'].'"/></td>'
+                        . '<td><input type="text" class="form-control" value="'.$array['Asset_Code'].'"/></td>'
+                        . '<td><input type="text" class="form-control" value="'.$array['Current_Division'].'"/></td>'
+                        . '<td><input type="text" class="form-control" value="'.$array['Current_Room'].'"/></td>'
+                        . '<td><button type="btn btn-primary" name="approve_asset" onclick="window.location.href=\'approve_function.php?id='.$array['Asset_ID'].'\'">Approve</button></td></tr>';
+                }		
+		?>
 				
-				<tr id="disappear_row">
-                    <td align="style=justify"><strong >&nbsp;&nbsp;Division </strong></td>
-                    <td>
-                        <?php
-                        $sql = "SELECT `Division_Code`,`Division_Name` FROM `division` ";
-                        $query1=mysqli_query($conn,$sql);
-                        //$query2=mysqli_fetch_assoc($query1);
-                        ?>
-                        <select id="user_division" name="user_division" class="form-control">
-                            <?php
-                            foreach($query1 as $i) {
-                                echo "<option value=" . $i['Division_Code'] . ">" . $i['Division_Name'] . "</option>";
-                            }
-                            ?>
-                        </select>
-                    </td>      
-                </tr>
 				
-				<tr>
-                    <td align="style=justify"><strong >&nbsp;&nbsp;First Name </strong></td>
-                    <td><input type="text" pattern="[a-zA-Z]+" title="Enter a valid name" name="first_name"  class="form-control" value="" required/></td>
-                </tr>
-				
-				<tr>
-                    <td align="style=justify"><strong >&nbsp;&nbsp;Last Name </strong></td>
-                    <td><input type="text pattern="[a-zA-Z]+" title="Enter a valid name"  name="last_name" class="form-control" value="" required/></td>
-                            
-                </tr>
-				 q
-<!--				<tr>-->
-<!--                    <td align="style=justify"><strong >&nbsp;&nbsp;Date of birth</strong></td>-->
-<!--                    <td>-->
-<!--					<input type="date" class="form-control" name="dob" data-date-inline-picker="true" /></td>-->
-<!--                            -->
-<!--                </tr>-->
-				
-				<tr>
-                    <td align="style="justify"><strong >&nbsp;&nbsp;Gender</strong></td>
-                    <td>
-  <input type="radio" name="gender" value="male"> Male
-  <input type="radio" name="gender" value="female"> Female<br>
-</td>
-                    </tr>
-                <tr>
-                    <td align="style="justify"><strong >&nbsp;&nbsp;Contact Number</strong></td>
-                    
-					<td><input type="text" pattern="\d{10}" title="Enter a valid contact number" name="contact" class="form-control" value="" required/></td>
-                            
-                </tr>
             </tbody>
                   </table>
-				  
-                </div><div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h3 class="modal-title" id="myModalLabel">Are you sure you want to continue?</h3>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-success btn-md" > OK</button>
-                </div>
-            </div>
-        </div>
-    </div>
-        <button class="btn btn-default" data-href="/delete.php?id=54" data-toggle="modal" data-target="#confirm-delete">
-        Submit
-    </button>
-                    <script>
-        $('#confirm-delete').on('show.bs.modal', function(e) {
-            $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-            
-            $('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
-        });
-    </script>
               </div>
             </div>
 
@@ -398,7 +331,7 @@ if ($user_details['user_level'] != "system_admin"){
           <div class="clearfix"></div>
           <div id="notif-group" class="tabbed_notifications"></div>
         </div>
-        </form>
+
         <script src="js/bootstrap.min.js"></script>
 
         <!-- bootstrap progress js -->
@@ -488,6 +421,3 @@ if ($user_details['user_level'] != "system_admin"){
 </body>
 
 </html>
-<?php
-
-?>

@@ -149,6 +149,12 @@ class FAssetClerk{
 
     }
     
+    function getUnconfirmed() {
+        $query = "SELECT * FROM asset WHERE confirmed='0';";
+        $res = $this->db->dbh->query($query);
+        return $res;
+    }
+    
     function refresh_assets(){
         
         $query = "SELECT Asset_ID, Current_Division, Current_Room FROM asset WHERE Asset_Code IS NULL AND Asset_available=1 AND Asset_approved=1 ";
