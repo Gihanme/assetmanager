@@ -10,14 +10,13 @@
         if ($res){
             $user = $_SESSION['user_details'];
             
-            echo "<script>alert('".$user['first_name']." ".$user['last_name']." has logged in.')</script>";
+            echo "<script>alert('".$user['first_name']." ".print_r($user)." has logged in.')</script>";
             
             $user_type = $user['user_level'];
             if ($user_type == 'asset_clerk'){
                 header("Location:assetclerk.php");
                 exit();
-            } elseif ($uuser_type==$user['etectrician']){
-                // TODO
+            } elseif ($user_type =='electrician'){
                 header("Location:confirm_asset.php");
                 exit();
             }

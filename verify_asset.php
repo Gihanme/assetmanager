@@ -297,7 +297,7 @@ $res = $log->retrieve_new_assets($division);
                         . '<td>'.$array['Division_Name'].'</td>'
                         . '<td>'.$array['Room_name'].'</td>'
                         . '<td>'.$array['first_name'].' '.$array['last_name'].'</td>'
-                        . '<td><button type="btn btn-primary" name="approve_asset" onclick="window.location.href=\'verify_function.php?id='.$array['Asset_ID'].'\'">Approve</button></td></tr>';
+                        . '<td><button type="btn btn-primary" name="approve_asset" onclick="window.location.href=\'verify_function.php?id='.$array['Asset_ID'].'\'">Requested</button></td></tr>';
                 }		
 		?>
 				

@@ -75,7 +75,17 @@ class FAssetClerk{
         }
 
     }
+    
+    function confirm_asset($asset_id) {
+        $query = "UPDATE asset SET confirmed=1 WHERE Asset_ID=" . $asset_id . ";";
+        $res = $this->db->dbh->query($query);
+    }
 
+    function deny_asset($asset_id, $message) {
+        $query = "UPDATE asset SET deny=1, deny_message='" . $message . "' WHERE Asset_ID='" . $asset_id . "';";
+        echo $query;
+        $res = $this->db->dbh->query($query);
+    }
 
     function verify_asset($asset_id, $verify, $verify_user){
         /** $verify shound be denopted as yes or no */
@@ -140,7 +150,7 @@ class FAssetClerk{
         
         $appix = implode(' AND ', $append);
         
-        $que="SELECT * FROM asset WHERE ".$appix ;
+        $que="SELECT * FROM asset WHERE confirmed=1 AND ".$appix ;
         //echo $que;
         $res = $this->db->dbh->query($que);
 
@@ -150,7 +160,7 @@ class FAssetClerk{
     }
     
     function getUnconfirmed() {
-        $query = "SELECT * FROM asset WHERE confirmed='0';";
+        $query = "SELECT * FROM asset WHERE confirmed='0' AND deny=0;";
         $res = $this->db->dbh->query($query);
         return $res;
     }

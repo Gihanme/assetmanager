@@ -270,13 +270,13 @@ if ($user_details['user_level'] != "electrician"){
                   
                   <table id="datatable" class="table table-striped table-bordered">
                     <thead>
-					<th align="style="justify"><strong >&nbsp;&nbsp;Asset Name </strong></th>
-					<th align="style="justify"><strong >&nbsp;&nbsp;Barcode No </strong></th>
-					<th align="style="justify"><strong >&nbsp;&nbsp;Serial No </strong></th>
-					<th align="style="justify"><strong >&nbsp;&nbsp;Asset code </strong></th>
-					<th align="style="justify"><strong >&nbsp;&nbsp;Division </strong></th>
-					<th align="style="justify"><strong >&nbsp;&nbsp;Room </strong></th>
-                      
+					<th align="style=justify"><strong >&nbsp;&nbsp;Asset Name </strong></th>
+					<th align="style=justify"><strong >&nbsp;&nbsp;Barcode No </strong></th>
+					<th align="style=justify"><strong >&nbsp;&nbsp;Serial No </strong></th>
+					<th align="style=justify"><strong >&nbsp;&nbsp;Asset code </strong></th>
+					<th align="style=justify"><strong >&nbsp;&nbsp;Division </strong></th>
+                    <th align="style=justify"><strong >&nbsp;&nbsp;Room </strong></th>
+                    <th align="style=justify"><strong >&nbsp;&nbsp;Confirm </strong></th>
                     </thead>
 
 
@@ -290,7 +290,9 @@ if ($user_details['user_level'] != "electrician"){
                         . '<td><input type="text" class="form-control" value="'.$array['Asset_Code'].'"/></td>'
                         . '<td><input type="text" class="form-control" value="'.$array['Current_Division'].'"/></td>'
                         . '<td><input type="text" class="form-control" value="'.$array['Current_Room'].'"/></td>'
-                        . '<td><button type="btn btn-primary" name="approve_asset" onclick="window.location.href=\'approve_function.php?id='.$array['Asset_ID'].'\'">Approve</button></td></tr>';
+                        . '<td><button type="btn btn-primary" name="approve_asset" onclick="window.location.href=\'confirm_function.php?id='.$array['Asset_ID'].'\'">Confirm</button>
+                        <button type="btn btn-primary" name="approve_asset" onclick="deny(' . $array['Asset_ID'] . ')">Deny</button></td></tr>';
+                       
                 }		
 		?>
 				
@@ -417,6 +419,12 @@ if ($user_details['user_level'] != "electrician"){
             });
           });
           TableManageButtons.init();
+            
+            function deny(id) {
+                var message = prompt("Please enter message", "");
+                var url =  "deny_function.php?id=" + id + "&message=" + message;
+                window.location = url;
+            }
         </script>
 </body>
 
