@@ -49,20 +49,7 @@
                 
                 
                        
-                       <!-- <li class="active"><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="blog-item.html">Blog Single</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="404.html">404</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="blog.html">Blog</a></li> 
-                        <li><a href="contact-us.html">Contact</a></li>   -->                     
-                    </ul>
+                       </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
@@ -71,11 +58,7 @@
 
     <section id="feature" class="transparent-bg">
         <div class="container">
-           <!-- <div class="center wow fadeInDown">
-               <h2>University Of Colombo School Of Computing</h2>
-                <p class="lead">Asset Management System</p> 
-            </div>-->
-
+          
             <div class="row">
                 <div class="features">
                     <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">

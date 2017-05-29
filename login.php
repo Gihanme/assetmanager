@@ -16,12 +16,11 @@
             if ($user_type == 'asset_clerk'){
                 header("Location:assetclerk.php");
                 exit();
-<<<<<<< HEAD
+
             } elseif ($user_type =='electrician'){
                 header("Location:confirm_asset.php");
                 exit();
-=======
->>>>>>> origin/master
+
             }
             else{
                 if ($user_type== 'bursar'){

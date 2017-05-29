@@ -77,11 +77,11 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
   <!-- Custom styling plus plugins -->
   <link href="css/custom.css" rel="stylesheet">
   <link href="css/icheck/flat/green.css" rel="stylesheet">
-  <link href="js/dxatatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/dxatatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
   <script src="js/jquery.min.js"></script>
   <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
