@@ -34,11 +34,11 @@ if ($user_details['user_level'] != "system_admin"){
   <link href="css/custom.css" rel="stylesheet">
   <link href="css/icheck/flat/green.css" rel="stylesheet">
 
-  <link href="js/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
 
   <script src="js/jquery.min.js"></script>
 
@@ -88,22 +88,10 @@ if ($user_details['user_level'] != "system_admin"){
             <div class="menu_section">
            <!--   <h3>General</h3> -->
               <ul class="nav side-menu">
-			  
-               
-                
-				<li><a href="createDivision.php"><i class="fa fa-building"></i> Create Division </span></a></li>
-                <li><a href="divisionDetails.php"><i class="fa fa-building"></i> View Divisions </span></a></li>
-                <li><a href="createRoom.php"><i class="fa fa-building"></i> Create Room </span></a></li>
-                <li><a href="roomdetails.php"><i class="fa fa-building"></i> View Rooms </span></a></li>		
-                <li><a href="createuser.php"><i class="fa fa-user"></i> Create User </span></a></li>
-                <li><a href="userDetails.php"><i class="fa fa-user"></i> View Users </span></a></li>
+			           <li><a href="sys_admin.php"><i class="fa fa-home"></i> Home </span></a></li>
                 <li><a href="create_itemcategory.php"><i class="fa fa-user"></i> Create asset category</a></li>
                 <li><a href="itemcategorydetails.php"><i class="fa fa-user"></i> View asset category</a></li>
-                <li><a href="create_assettype.php"><i class="fa fa-user"></i> Create Asset Type</a></li>
-                <li><a href="assettypedetails.php"><i class="fa fa-user"></i>View Asset Type</a></li>
-				
-				
-               </ul>
+              </ul>
             </div>
 
           </div>
@@ -140,52 +128,6 @@ if ($user_details['user_level'] != "system_admin"){
               </li>
               
 
-              <!--<li role="presentation" class="dropdown">
-                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                  <i class="fa fa-envelope-o"></i>
-                  <span class="badge bg-green">6</span>
-                </a>
-                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                  <li>
-                    <a>
-                      <span class="image">
-                                        <img src="images/img.jpg" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>chathura</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        add a asset to the system
-                                    </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a>
-                      <span class="image">
-                                        <img src="images/img.jpg" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>chathura</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                       add a asset to the system
-                                    </span>
-                    </a>
-                  </li>
-                 
-                  
-                  <li>
-                    <div class="text-center">
-                      <a>
-                        <strong>See All Alerts</strong>
-                        <i class="fa fa-angle-right"></i>
-                      </a>
-                    </div>
-                  </li>
-                </ul>
-              </li>-->
 
             </ul>
           </nav>
@@ -198,27 +140,6 @@ if ($user_details['user_level'] != "system_admin"){
       <div class="right_col" role="main">
         <div class="">
           <div class="page-title">
-		  <!--
-            <div class="title_left">
-             <h3>
-                    Users
-                    <small>
-                        Some examples to get you started
-                    </small>
-                </h3>  
-            </div>
-
-            <div class="title_right">
-              <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search for...">
-                  <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Go!</button>
-                        </span>
-                </div>
-              </div>
-            </div>
-			-->
 			
           </div>
           <div class="clearfix"></div>
@@ -239,8 +160,8 @@ if ($user_details['user_level'] != "system_admin"){
                             <th>Item Category Code</th>
                             <th>Item Category Name</th>
                             <th>Description</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th> </th>
+                            <th> </th>
                         
                         </tr>
                     </thead>

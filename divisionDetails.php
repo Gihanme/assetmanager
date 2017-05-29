@@ -31,23 +31,14 @@ if ($user_details['user_level'] != "system_admin"){
   <!-- Custom styling plus plugins -->
   <link href="css/custom.css" rel="stylesheet">
   <link href="css/icheck/flat/green.css" rel="stylesheet">
-  <link href="js/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
 
   <script src="js/jquery.min.js"></script>
 
-  <!--[if lt IE 9]>
-        <script src="../assets/js/ie8-responsive-file-warning.js"></script>
-        <![endif]-->
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
 
 </head>
 
@@ -83,16 +74,9 @@ if ($user_details['user_level'] != "system_admin"){
             <div class="menu_section">
            <!--   <h3>General</h3> -->
               <ul class="nav side-menu">
-		<li><a href="createDivision.php"><i class="fa fa-building"></i> Create Division </span></a></li>
+                <li><a href="sys_admin.php"><i class="fa fa-home"></i> Home </span></a></li>
+                <li><a href="createDivision.php"><i class="fa fa-building"></i> Create Division </span></a></li>
                 <li><a href="divisionDetails.php"><i class="fa fa-building"></i> View Divisions </span></a></li>
-                <li><a href="createRoom.php"><i class="fa fa-building"></i> Create Room </span></a></li>
-                <li><a href="roomdetails.php"><i class="fa fa-building"></i> View Rooms </span></a></li>		
-                <li><a href="createuser.php"><i class="fa fa-user"></i> Create User </span></a></li>
-                <li><a href="userDetails.php"><i class="fa fa-user"></i> View Users </span></a></li>
-                <li><a href="create_itemcategory.php"><i class="fa fa-user"></i> Create asset category</a></li>
-                <li><a href="itemcategorydetails.php"><i class="fa fa-user"></i> View asset category</a></li>
-                <li><a href="create_assettype.php"><i class="fa fa-user"></i> Create Asset Type</a></li>
-                <li><a href="assettypedetails.php"><i class="fa fa-user"></i>View Asset Type</a></li>
                </ul>
             </div>
 
@@ -130,52 +114,6 @@ if ($user_details['user_level'] != "system_admin"){
               </li>
               
 
-              <!--<li role="presentation" class="dropdown">
-                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                  <i class="fa fa-envelope-o"></i>
-                  <span class="badge bg-green">6</span>
-                </a>
-                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                  <li>
-                    <a>
-                      <span class="image">
-                                        <img src="images/img.jpg" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>chathura</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        add a asset to the system
-                                    </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a>
-                      <span class="image">
-                                        <img src="images/img.jpg" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>chathura</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                       add a asset to the system
-                                    </span>
-                    </a>
-                  </li>
-                 
-                  
-                  <li>
-                    <div class="text-center">
-                      <a>
-                        <strong>See All Alerts</strong>
-                        <i class="fa fa-angle-right"></i>
-                      </a>
-                    </div>
-                  </li>
-                </ul>
-              </li>-->
 
             </ul>
           </nav>
@@ -207,8 +145,8 @@ if ($user_details['user_level'] != "system_admin"){
                             <th>Division Name</th>
                             <th>Division Code</th>
                             <th>Description</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th> </th>
+                            <th> </th>
                         
                         </tr>
                     </thead>
@@ -232,7 +170,7 @@ if ($user_details['user_level'] != "system_admin"){
                                   while($row= $result->fetch_assoc()){
                                       echo "<tr><td>".$row["Division_Name"]."</td>"."<td>".$row["Division_Code"]."</td>"."<td>".$row["Description"]."</td>";
                                       echo ("<td><a class='btn btn-primary' href='editDivision.php?Division_Code=".$row['Division_Code']."'><i class='icon-ok'></i>Edit</a></td>");
-                                     // echo "<td><a href='editDivision.php?Division_Code=".$row['Division_Code']."'>Edit</a></td>";
+                                     
                                       echo ("<td><button class='btn btn-danger' data-toggle='modal' data-target='#myModal$i'><i class='icon-warning-sign'></i>
                                              Delete</a></button></td> </tr>");
                                       echo "<div class='modal fade' id='myModal$i' role='dialog'>

@@ -33,13 +33,6 @@ else{
 $query1=mysqli_query($conn,"select * from division where Division_Code='$Division_Code'");
 $query2=mysqli_fetch_assoc($query1);
 
-/*
-$itemid=$_GET['itemid'];
-$itemname = $_POST['itemcategory_name'];
-$Description = $_POST['itemcategory_Description'];
-$query = "Update itemcategory set itemname='$itemname' and itemdesc='$itemdesc' where itemid='$itemid'";
-$result=mysqli_query($conn,$query);
-*/
 if(!$query2){
     //echo "Faild to insert";
 }
@@ -77,24 +70,15 @@ mysqli_close($conn);
   <link href="css/custom.css" rel="stylesheet">
   <link href="css/icheck/flat/green.css" rel="stylesheet">
 
-  <link href="js/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
 
   <script src="js/jquery.min.js"></script>
 
-  <!--[if lt IE 9]>
-        <script src="../assets/js/ie8-responsive-file-warning.js"></script>
-        <![endif]-->
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
+  
 </head>
 
 
@@ -131,12 +115,9 @@ mysqli_close($conn);
             <div class="menu_section">
            <!--   <h3>General</h3> -->
              <ul class="nav side-menu">
-		<li><a href="createDivision.php"><i class="fa fa-building"></i> Create Division </span></a></li>
+                <li><a href="sys_admin.php"><i class="fa fa-home"></i> Home </span></a></li>
+                <li><a href="createDivision.php"><i class="fa fa-building"></i> Create Division </span></a></li>
                 <li><a href="divisionDetails.php"><i class="fa fa-building"></i> View Divisions </span></a></li>
-                <li><a href="createRoom.php"><i class="fa fa-building"></i> Create Room </span></a></li>
-                <li><a href="roomdetails.php"><i class="fa fa-building"></i> View Rooms </span></a></li>		
-                <li><a href="createuser.php"><i class="fa fa-user"></i> Create User </span></a></li>
-                <li><a href="userDetails.php"><i class="fa fa-user"></i> View Users </span></a></li>
                </ul>
             </div>
 
