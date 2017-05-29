@@ -394,8 +394,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`user_ID`, `user_email`, `user_password`, `first_name`, `last_name`, `user_level`, `division`, `gender`, `Contact_Number`) VALUES
-(4, 'thilinaviraj950@gmail.com', '$2y$10$ydz4Z0y7aF0mhRvf8e7vHOj7HnmvthLzEx1cYi2MnToQY3ALYKclq', 'Thilina', 'Viraj', 'div_asset_clerk', 'NOC', 'm', '0719783950'),
-(5, 'hasithdthenuwara@gmail.com', '$2y$10$0lJwAG.PZPub5JPSq.HcxOR2ZSLkTr.LHvzXZ/6p0hEbB44D0a8mi', 'Hasith', 'Thenuwara', 'system_admin', 'DIR', 'm', '0718822516'),
+(4, 'abc@gmail.com', '$2y$10$ydz4Z0y7aF0mhRvf8e7vHOj7HnmvthLzEx1cYi2MnToQY3ALYKclq', 'Thilina', 'Viraj', 'div_asset_clerk', 'NOC', 'm', '0719783950'),
+(5, 'gihanishara926@gmail.com', '$2y$10$0lJwAG.PZPub5JPSq.HcxOR2ZSLkTr.LHvzXZ/6p0hEbB44D0a8mi', 'Hasith', 'Thenuwara', 'system_admin', 'DIR', 'm', '0718822516'),
 (8, 'kavinda.rasnayake@gmail.com', '$2y$10$9F8j5oOp9h5mQt/T9q0JG.2i5DhxdFcanrw1GufR2gZyA3wzZHkDO', 'Kavinda', 'Rasnayake', 'div_asset_clerk', 'FD', 'm', '0771234567'),
 (10, 'shyamah@gmail.com', '$2y$10$tflQgDQbXvFwoNjedboFN.LxtcrG48MY5a0w1QpaRI0xlG16xlffu', 'Shyama', 'Hemachaya', 'asset_clerk', 'FD', 'm', '0714856132'),
 (11, 'shyamahemachaya@gmail.com', '$2y$10$hpGAR5KJbmVMIL8tMymxXuVmkrYV6IgsrOHNw3uBXlpXf8cfciCVO', 'Shyama', 'Hemachaya', 'bursar', 'FD', 'm', '0714813659'),
