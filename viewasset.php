@@ -1,8 +1,13 @@
 <?php 
- include "function.php"; if (!isset($_SESSION['user_details'])){     header("location:login.php");     exit(); }
+ include "function.php"; 
+ if (!isset($_SESSION['user_details'])){
+      header("location:login.php");
+      exit();
+}
 
 $log = new FAssetClerk();
-$user_details = $_SESSION['user_details']; $level = $log->retrieve_user_level_name($user_details['user_level']);
+$user_details = $_SESSION['user_details']; 
+$level = $log->retrieve_user_level_name($user_details['user_level']);
 $first_name = $user_details['first_name'];
 $last_name = $user_details['last_name'];
 $division = $user_details['division'];
@@ -114,8 +119,11 @@ $log->refresh_assets();
                                     echo '<li><a href="addasset.php"><i class="fa fa-desktop"></i> Add Asset </span></a></li>';
                                 }?>
 				<li><a href="viewasset.php"><i class="fa fa-eye"></i> View Asset </span></a></li>
-                                <?php if (($user_details['user_level'] == 'div_asset_clerk')){
-                                    echo '<li><a href="verify_asset.php"><i class="fa fa-eye"></i> Verify Asset </span></a></li>';
+            <?php if (($user_details['user_level'] == 'div_asset_clerk')){
+                                    echo '<li><a href="verify_asset.php"><i class="fa fa-check-square-o"></i> Verify Asset </span></a></li>';
+                                }?>
+            <?php if (($user_details['user_level'] == 'bursar')){
+                                    echo '<li><a href="verify_asset.php"><i class="fa fa-check-square-o"></i> Verify Asset </span></a></li>';
                                 }?>
 				
 				
@@ -171,7 +179,6 @@ $log->refresh_assets();
                 </ul>
               </li>
 
-
             </ul>
           </nav>
         </div>
@@ -196,15 +203,6 @@ $log->refresh_assets();
                   <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Settings 1</a>
-                        </li>
-                        <li><a href="#">Settings 2</a>
-                        </li>
-                      </ul>
-                    </li>
                     <li><a class="close-link"><i class="fa fa-close"></i></a>
                     </li>
                   </ul>
@@ -217,7 +215,7 @@ $log->refresh_assets();
                     <thead>
                         <?php 
                       if (($user_details['user_level'] !== 'asset_clerk')){
-                            echo '<th align="style="justify"><input type="checkbox" class="check" id="checkall"></th>';
+                            echo '<th align="style="justify"></th>';
                         }
                       ?>
                                         

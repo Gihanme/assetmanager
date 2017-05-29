@@ -31,10 +31,10 @@ class FAssetClerk{
     }
     /**This is function for adding assets.  */
     
-    function add_asset($item_name, $item_type, $item_category, $vendor, $vendor_add, $p_date, $w_end, $serial_no, $value, $model, $brand, $barcode_no, $division, $room, $deprec = 0.2){
+    function add_asset($item_name, $item_type, $item_category, $vendor, $vendor_add, $p_date, $w_end, $serial_no, $value, $model, $brand, $barcode_no, $division, $room, $deprec = 0.2, $img){
         
-        $que1 = "INSERT INTO asset(Asset_Name, Asset_type, Asset_Category, Model_No, Brand, Serial_No, Purchase_Date, Warranty_End, Price,Original_Value, Current_Value, Depreciation, Vendor, Vendor_Address,  Current_Division, Current_Room,Barcode_No) "
-                . "VALUES ('$item_name','$item_type', '$item_category', '$model', '$brand', '$serial_no', '$p_date', '$w_end',$value ,$value ,$value , $deprec, '$vendor','$vendor_add', '$division','$room' ,'$barcode_no'); ";
+        $que1 = "INSERT INTO asset(Asset_Name, Asset_type, Asset_Category, Model_No, Brand, Serial_No, Purchase_Date, Warranty_End, Price,Original_Value, Current_Value, Depreciation, Vendor, Vendor_Address,  Current_Division, Current_Room,Barcode_No, Image) "
+                . "VALUES ('$item_name','$item_type', '$item_category', '$model', '$brand', '$serial_no', '$p_date', '$w_end',$value ,$value ,$value , $deprec, '$vendor','$vendor_add', '$division','$room' ,'$barcode_no', '$img'); ";
         //try{
             //echo "$que1";
             $res = $this->db->dbh->query($que1);
@@ -75,17 +75,7 @@ class FAssetClerk{
         }
 
     }
-    
-    function confirm_asset($asset_id) {
-        $query = "UPDATE asset SET confirmed=1 WHERE Asset_ID=" . $asset_id . ";";
-        $res = $this->db->dbh->query($query);
-    }
 
-    function deny_asset($asset_id, $message) {
-        $query = "UPDATE asset SET deny=1, deny_message='" . $message . "' WHERE Asset_ID='" . $asset_id . "';";
-        echo $query;
-        $res = $this->db->dbh->query($query);
-    }
 
     function verify_asset($asset_id, $verify, $verify_user){
         /** $verify shound be denopted as yes or no */
@@ -150,19 +140,13 @@ class FAssetClerk{
         
         $appix = implode(' AND ', $append);
         
-        $que="SELECT * FROM asset WHERE confirmed=1 AND ".$appix ;
+        $que="SELECT * FROM asset WHERE ".$appix ;
         //echo $que;
         $res = $this->db->dbh->query($que);
 
         return $res;
 
 
-    }
-    
-    function getUnconfirmed() {
-        $query = "SELECT * FROM asset WHERE confirmed='0' AND deny=0;";
-        $res = $this->db->dbh->query($query);
-        return $res;
     }
     
     function refresh_assets(){

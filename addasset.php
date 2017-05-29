@@ -128,9 +128,14 @@ if(empty($_POST['brand'])){
     $room = $_POST['room'];
     $item_category = $_POST['category'];
     
+    require_once "uploadimage.php";
+    if(isset($newname)){
+      $log->add_asset($item_name, $item_type, $item_category, $vendor, $vendor_add, $p_date, $w_end, $serial_no, $value, $model, $brand, $barcode_no, $division, $room, $deprec, $newname);
+    }else{
+      echo "Error uploading image";
+    }
     
     
-    $log->add_asset($item_name, $item_type, $item_category, $vendor, $vendor_add, $p_date, $w_end, $serial_no, $value, $model, $brand, $barcode_no, $division, $room, $deprec );
     }
 
  }
@@ -141,6 +146,9 @@ function test_input($data){
     $data = htmlspecialchars($data);
     return $data;
 }
+
+
+
 ?>
 
 
@@ -367,7 +375,7 @@ $(function() {
         }
 
     </script>
-                <form name="createUserType" id="createUserType" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" data-toggle="validator">
+                <form name="createUserType" id="createUserType" method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" data-toggle="validator">
                     <table id="datatable" class="table table-striped table-bordered">
                     <thead>                      
                     </thead>
@@ -385,7 +393,7 @@ $(function() {
                                         }?>
                                 </select>
                             </td>   
-                        </tr> 
+                        </tr>	
                         <tr>
                             <td align="style="><strong >&nbsp;&nbsp;Model Number </strong></td>
                             <td><input type="text" class="form-control" value="" name="model"/><span class="error"><?php echo $modelNoErr;?></span><br><br></td>
@@ -411,8 +419,8 @@ $(function() {
                             <td align="style="justify"><strong >&nbsp;&nbsp;Brand </strong></td>
                             <td><input type="text" class="form-control" value="" name="brand"/><span class="error"><?php echo $brandErr;?></span><br><br></td>   
                         </tr>
-        
-        <tr>
+				
+				<tr>
                     <td align="style="justify"><strong >&nbsp;&nbsp;Vendor </strong></td>
                     <td><input type="text" class="form-control" value="" name="vendor"/><span class="error"><?php echo $vendorErr;?></span><br><br></td>
                     
@@ -420,8 +428,8 @@ $(function() {
                     <td><input type="text" class="form-control" value="" name="vendor_add"/><span class="error"><?php echo $vendorAddErr;?></span><br><br></td>
 
                 </tr>
-        
-        <tr>
+				
+				<tr>
                     <td align="style="justify"><strong >&nbsp;&nbsp;Division</strong></td>
                     <td><select class="form-control" name="division"   onchange="fetch_select(this.value);">
                             <?php 
@@ -437,31 +445,37 @@ $(function() {
                                     echo "<option value='".$rom['Room_code']."'>".$rom['Room_name']."</option>";
                                 }?>
                         </select></td>  
-                </tr>       
-        <tr>
+                </tr>				
+				<tr>
                     
                     <td align="style="justify"><strong >&nbsp;&nbsp;Depreciation </strong></td>
                     <td><input type="text" class="form-control" value="" name="deprec"/></td>
-                                    
+		                                
                     <td align="style="justify"><strong >&nbsp;&nbsp;Warranty Period  </strong></td>
 
                     <td>          
                 
             <input type="text" name="datefilter" value="" class="form-control" required/>
-                        
+        								
                 
-        </tr>
+				</tr>
+        <tr>
+                    <td align="style="justify"><strong >&nbsp;&nbsp;Select File</strong></td>
+                    <td><input type="file" name="image" > </td> 
+                    
+                       
+                </tr> 
                                 
 
-                      
+                    	
             </tbody>
                   </table>
                     <div class="form-group">
-    <div class="col-md-9 col-md-offset-3">
+		<div class="col-md-9 col-md-offset-3">
                     <div id="messages">
                         <font size="30"></font>
-                    </div>              
-                </div>              
+                    </div>							
+                </div>							
         </div>
                     <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -473,7 +487,7 @@ $(function() {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-success btn-md" > Submit</button>
+                    <button type="submit" name="submit"  class="btn btn-success btn-md" > Submit</button>
                 </div>
             </div>
         </div>
@@ -484,48 +498,48 @@ $(function() {
         Submit
     </button>
             
-  </div>                       
+	</div>                       
                     <script type="text/javascript">
-      $(document).ready(function() {
-        $('#createUserType').bootstrapValidator({
-          container: '#messages',
-          feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-          },
-          fields: {
-            name: {
-              validators: {
-                notEmpty: {
-                  message: 'The room code is required and cannot be empty'
-                }
-              }
-            },
+			$(document).ready(function() {
+				$('#createUserType').bootstrapValidator({
+					container: '#messages',
+					feedbackIcons: {
+						valid: 'glyphicon glyphicon-ok',
+						invalid: 'glyphicon glyphicon-remove',
+						validating: 'glyphicon glyphicon-refresh'
+					},
+					fields: {
+						name: {
+							validators: {
+								notEmpty: {
+									message: 'The room code is required and cannot be empty'
+								}
+							}
+						},
                                                 model: {
-              validators: {
-                notEmpty: {
-                  message: 'The room name is required and cannot be empty'
-                }
-              }
-            },
+							validators: {
+								notEmpty: {
+									message: 'The room name is required and cannot be empty'
+								}
+							}
+						},
                                                 barcode: {
-              validators: {
-                notEmpty: {
-                  message: 'The room description is required and cannot be empty'
-                }
-              }
-            }
-            }})});
-            
-    </script>
+							validators: {
+								notEmpty: {
+									message: 'The room description is required and cannot be empty'
+								}
+							}
+						}
+						}})});
+						
+		</script>
                 <div id="custom_notifications" class="custom-notifications dsp_none">
           <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
           </ul>
           <div class="clearfix"></div>
           <div id="notif-group" class="tabbed_notifications"></div>
         </div>
-                        </form>
+</form>
                         <script src="js/bootstrap.min.js"></script>
 
         <!-- bootstrap progress js -->
@@ -612,6 +626,31 @@ $(function() {
             });
           });
           TableManageButtons.init();
+
+          $(function() {
+
+  <input type="text" name="datefilter" value="" />
+ 
+<script type="text/javascript">
+$(function() {
+
+  $('input[name="datefilter"]').daterangepicker({
+      autoUpdateInput: false,
+      locale: {
+          cancelLabel: 'Clear'
+      }
+  });
+
+  $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+      $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+  });
+
+  $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+      $(this).val('');
+  });
+
+});
+</script>
         </script>
         
 </body>
