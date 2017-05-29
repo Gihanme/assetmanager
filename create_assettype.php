@@ -18,7 +18,7 @@ $last_name = $user_details['last_name'];
 	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>  
 	  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
 	  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>
-<title>Add asset type</title>
+<title>AMS</title>
 
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -32,11 +32,11 @@ $last_name = $user_details['last_name'];
   <!-- Custom styling plus plugins -->
   <link href="css/custom.css" rel="stylesheet">
   <link href="css/icheck/flat/green.css" rel="stylesheet">
-  <link href="js/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body class="nav-md">
@@ -63,16 +63,10 @@ $last_name = $user_details['last_name'];
             <div class="menu_section">
            <!--   <h3>General</h3> -->
               <ul class="nav side-menu">
-		<li><a href="createDivision.php"><i class="fa fa-building"></i> Create Division </span></a></li>
-                <li><a href="divisionDetails.php"><i class="fa fa-building"></i> View Divisions </span></a></li>
-                <li><a href="createRoom.php"><i class="fa fa-building"></i> Create Room </span></a></li>
-                <li><a href="roomdetails.php"><i class="fa fa-building"></i> View Rooms </span></a></li>		
-                <li><a href="createuser.php"><i class="fa fa-user"></i> Create User </span></a></li>
-                <li><a href="userDetails.php"><i class="fa fa-user"></i> View Users </span></a></li>
-                <li><a href="create_itemcategory.php"><i class="fa fa-user"></i> Create asset category</a></li>
-                <li><a href="itemcategorydetails.php"><i class="fa fa-user"></i> View asset category</a></li>
+		            <li><a href="sys_admin.php"><i class="fa fa-home"></i> Home </span></a></li>
                 <li><a href="create_assettype.php"><i class="fa fa-user"></i> Create Asset Type</a></li>
-                <li><a href="assettypedetails.php"><i class="fa fa-user"></i>View Asset Type</a></li></ul>
+                <li><a href="assettypedetails.php"><i class="fa fa-user"></i>View Asset Type</a></li>
+              </ul>
             </div>
 
           </div>

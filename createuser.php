@@ -36,11 +36,11 @@ if ($user_details['user_level'] != "system_admin"){
   <link href="css/custom.css" rel="stylesheet">
   <link href="css/icheck/flat/green.css" rel="stylesheet">
 
-  <link href="js/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
 
   <script src="js/jquery.min.js"></script>
 
@@ -91,17 +91,10 @@ if ($user_details['user_level'] != "system_admin"){
             <div class="menu_section">
            <!--   <h3>General</h3> -->
              <ul class="nav side-menu">
-		<li><a href="createDivision.php"><i class="fa fa-building"></i> Create Division </span></a></li>
-                <li><a href="divisionDetails.php"><i class="fa fa-building"></i> View Divisions </span></a></li>
-                <li><a href="createRoom.php"><i class="fa fa-building"></i> Create Room </span></a></li>
-                <li><a href="roomdetails.php"><i class="fa fa-building"></i> View Rooms </span></a></li>		
-                <li><a href="createuser.php"><i class="fa fa-user"></i> Create User </span></a></li>
+		            <li><a href="sys_admin.php"><i class="fa fa-home"></i> Home </span></a></li>
+                <li><a href="createuser.php"><i class="fa fa-user-plus"></i> Create User </span></a></li>
                 <li><a href="userDetails.php"><i class="fa fa-user"></i> View Users </span></a></li>
-                <li><a href="create_itemcategory.php"><i class="fa fa-user"></i> Create asset category</a></li>
-                <li><a href="itemcategorydetails.php"><i class="fa fa-user"></i> View asset category</a></li>
-                <li><a href="create_assettype.php"><i class="fa fa-user"></i> Create Asset Type</a></li>
-                <li><a href="assettypedetails.php"><i class="fa fa-user"></i>View Asset Type</a></li>
-               </ul>
+              </ul>
             </div>
 
           </div>
@@ -273,7 +266,7 @@ if ($user_details['user_level'] != "system_admin"){
                     </tr>
 
                 <tr >
-                    <td align="style=justify    "><strong >&nbsp;&nbsp;User Type </strong></td>
+                    <td align="style="justify "><strong >&nbsp;&nbsp;User Type </strong></td>
                     <td>
                         <select id="user_type" class="form-control" name="user_type" onchange="disable()">
                             <option value="div_asset_clerk">Divisional Asset Clerk</option>
@@ -282,14 +275,12 @@ if ($user_details['user_level'] != "system_admin"){
                             <option value="asset_clerk">Asset clerk</option>
                             <option value="system_admin">System Administrator</option>
                             <option value="temp_user">Temporary User</option>
-                            <option value="electrician">Electrician</option>
-                            
                         </select>
                     </td>      
                 </tr>
 				
 				<tr id="disappear_row">
-                    <td align="style=justify"><strong >&nbsp;&nbsp;Division </strong></td>
+                    <td align="style="justify"><strong >&nbsp;&nbsp;Division </strong></td>
                     <td>
                         <?php
                         $sql = "SELECT `Division_Code`,`Division_Name` FROM `division` ";
@@ -307,18 +298,18 @@ if ($user_details['user_level'] != "system_admin"){
                 </tr>
 				
 				<tr>
-                    <td align="style=justify"><strong >&nbsp;&nbsp;First Name </strong></td>
+                    <td align="style="justify"><strong >&nbsp;&nbsp;First Name </strong></td>
                     <td><input type="text" pattern="[a-zA-Z]+" title="Enter a valid name" name="first_name"  class="form-control" value="" required/></td>
                 </tr>
 				
 				<tr>
-                    <td align="style=justify"><strong >&nbsp;&nbsp;Last Name </strong></td>
-                    <td><input type="text pattern="[a-zA-Z]+" title="Enter a valid name"  name="last_name" class="form-control" value="" required/></td>
+                    <td align="style="justify"><strong >&nbsp;&nbsp;Last Name </strong></td>
+                    <td><input type="text" pattern="[a-zA-Z]+" title="Enter a valid name"  name="last_name" class="form-control" value="" required/></td>
                             
                 </tr>
-				 q
+				
 <!--				<tr>-->
-<!--                    <td align="style=justify"><strong >&nbsp;&nbsp;Date of birth</strong></td>-->
+<!--                    <td align="style="justify"><strong >&nbsp;&nbsp;Date of birth</strong></td>-->
 <!--                    <td>-->
 <!--					<input type="date" class="form-control" name="dob" data-date-inline-picker="true" /></td>-->
 <!--                            -->
