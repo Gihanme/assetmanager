@@ -141,7 +141,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                 }?>
 				<li><a href="viewasset.php"><i class="fa fa-eye"></i> View Asset </span></a></li>
                                 <?php if (($user_details['user_level'] == 'div_asset_clerk')){
-                                    echo '<li><a href="verify_asset.php"><i class="fa fa-eye"></i> Verify Asset </span></a></li>';
+                                    echo '<li><a href="verify_asset.php"><i class="fa fa-check-square-o"></i> Verify Asset </span></a></li>';
+                                }?>
+        <?php if (($user_details['user_level'] == 'bursar')){
+                                    echo '<li><a href="verify_asset.php"><i class="fa fa-check-square-o"></i> Verify Asset </span></a></li>';
                                 }?>
 				
 				
@@ -196,8 +199,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 </ul>
               </li>
 
-            
-
             </ul>
           </nav>
         </div>
@@ -209,6 +210,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
       <div class="right_col" role="main">
         <div class="">
           <div class="page-title">
+
 			
           </div>
           <div class="clearfix"></div>
@@ -221,15 +223,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                   <h2>View Asset </h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Settings 1</a>
-                        </li>
-                        <li><a href="#">Settings 2</a>
-                        </li>
-                      </ul>
                     </li>
                     <li><a class="close-link"><i class="fa fa-close"></i></a>
                     </li>
@@ -245,6 +238,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
                     <tbody>
+                <tr>
+                  <td colspan="4" >
+                    <center><img src="<?php echo $asset_data['Image']?>" style="height:250px;width:auto;" /></center>
+
+                  </td>
+
+                </tr>
                     
                 <tr>
                     <input hidden name="id" value="<?php echo $asset_data['Asset_ID']?>" >
@@ -370,6 +370,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                     	
             </tbody>
                   </table>
+
+                  </br>   </br>  </br>   </br> 
                   
                     
                     
@@ -378,6 +380,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <style>
                         .galleria{ width: 700px; height: 400px; background: #000 }
                     </style>
+
+
                    <h2>Movement History</h2>
                         <table class="table table-striped table-bordered">
                             <thead>
@@ -395,146 +399,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                     echo "<tr><td>".$mov['old_division']."</td>"
                                             . "<td>".$mov['old_room']."</td>"
                                             . "<td>".$mov['new_division']."</td>"
-                                            . "<td>".$mov['new_room']."</td>"
-                
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
+                                            . "<td>".$mov['new_room']."</td>" 
                                             . "<td>".$mov['move_date']."</td>"
                                             . "<td>".$mov['verify_date']."</td></tr>";
                                 }
                                 ?>
                             </tr>
-                        </table>  
-                  <div id="images">
-                      <h2>Image Gallery</h2><br>
-                      
-                                 </div>
-                                    <?php 
-
-                                        while ($photo = $pics->fetch_assoc()){
-                                            echo '<div class="col-lg-1 col-md-1 col-xs-1 ">
-                                                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="" data-caption="" data-image="'.$photo['photo_path'].'" data-target="#image-gallery">
-                                                    <img  src="'.$photo['photo_path'].'" alt="Short alt text">
-                                                </a>
-                                            </div>';
-
-                                            }
-                                    ?>
-                                <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                                            <h4 class="modal-title" id="image-gallery-title"></h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <img id="image-gallery-image" class="img-responsive" src="">
-                                        </div>
-                                        <div class="modal-footer">
-
-                                            <div class="col-md-2">
-                                                <button type="button" class="btn btn-primary" id="show-previous-image">Previous</button>
-                                            </div>
-
-                                            <div class="col-md-8 text-justify" id="image-gallery-caption">
-                                                This text will be overwritten by jQuery
-                                            </div>
-
-                                            <div class="col-md-2">
-                                                <button type="button" id="show-next-image" class="btn btn-default">Next</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                                <script>
-                                    $(document).ready(function(){
-
-                                loadGallery(true, 'a.thumbnail');
-
-                                //This function disables buttons when needed
-                                function disableButtons(counter_max, counter_current){
-                                    $('#show-previous-image, #show-next-image').show();
-                                    if(counter_max == counter_current){
-                                        $('#show-next-image').hide();
-                                    } else if (counter_current == 1){
-                                        $('#show-previous-image').hide();
-                                    }
-                                }
-
-                                /**
-                                 *
-                                 * @param setIDs        Sets IDs when DOM is loaded. If using a PHP counter, set to false.
-                                 * @param setClickAttr  Sets the attribute for the click handler.
-                                 */
-
-                                function loadGallery(setIDs, setClickAttr){
-                                    var current_image,
-                                        selector,
-                                        counter = 0;
-
-                                    $('#show-next-image, #show-previous-image').click(function(){
-                                        if($(this).attr('id') == 'show-previous-image'){
-                                            current_image--;
-                                        } else {
-                                            current_image++;
-                                        }
-
-                                        selector = $('[data-image-id="' + current_image + '"]');
-                                        updateGallery(selector);
-                                    });
-
-                                    function updateGallery(selector) {
-                                        var $sel = selector;
-                                        current_image = $sel.data('image-id');
-                                        $('#image-gallery-caption').text($sel.data('caption'));
-                                        $('#image-gallery-title').text($sel.data('title'));
-                                        $('#image-gallery-image').attr('src', $sel.data('image'));
-                                        disableButtons(counter, $sel.data('image-id'));
-                                    }
-
-                                    if(setIDs == true){
-                                        $('[data-image-id]').each(function(){
-                                            counter++;
-                                            $(this).attr('data-image-id',counter);
-                                        });
-                                    }
-                                    $(setClickAttr).on('click',function(){
-                                        updateGallery($(this));
-                                    });
-                                }
-                            });
-                                    </script>
-                                    <br><br>
-                                    <div>
-                      <!--<form name="photo_upload" action="" method="post" enctype="multipart/form-data" >
-                        <input type="file" accept="image/*" name="photo[]" multiple/><br>
-                        <input hidden name="id" value="<?php echo $asset_data['Asset_ID']?>" >
-                        <input type="submit">
-                      </form>-->
-                     
-                                    
-                                    </div>
-                  </div>
+                        </table> 
               </div>
             </div>
-          
-          
-
-            
-
-            
-      
-
-           
-           
+ 
                 </div>
               </div>
             </div>
@@ -593,7 +467,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         <!-- pace -->
         <script src="js/pace/pace.min.js"></script>
         <script>
-          var handleDataTableButtons = function() {
+          var handleDataTableButtons = function() { 
               "use strict";
               0 !== $("#datatable-buttons").length && $("#datatable-buttons").DataTable({
                 dom: "Bfrtip",

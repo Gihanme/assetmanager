@@ -460,7 +460,7 @@ $(function() {
                 
 				</tr>
         <tr>
-                    <td align="style="justify"><strong >&nbsp;&nbsp;Select File</strong></td>
+                    <td align="style="justify"><strong >&nbsp;&nbsp;Select File</strong  ></td>
                     <td><input type="file" name="image" > </td> 
                     
                        
