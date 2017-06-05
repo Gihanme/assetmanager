@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.12
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 31, 2016 at 12:22 PM
--- Server version: 5.6.25
--- PHP Version: 5.6.11
+-- Generation Time: Jun 05, 2017 at 08:25 AM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `asset`
 --
 
-CREATE TABLE IF NOT EXISTS `asset` (
+CREATE TABLE `asset` (
   `Asset_ID` int(11) NOT NULL,
   `Barcode_No` int(11) DEFAULT NULL,
   `Asset_Name` varchar(60) NOT NULL,
@@ -34,6 +34,7 @@ CREATE TABLE IF NOT EXISTS `asset` (
   `Asset_Category` varchar(60) NOT NULL,
   `Model_No` varchar(60) NOT NULL,
   `Brand` varchar(60) NOT NULL,
+  `confirmed` tinyint(1) NOT NULL DEFAULT '0',
   `Serial_No` varchar(60) NOT NULL,
   `Purchase_Date` date NOT NULL,
   `Warranty_End` date NOT NULL,
@@ -50,29 +51,25 @@ CREATE TABLE IF NOT EXISTS `asset` (
   `Asset_available` tinyint(11) NOT NULL DEFAULT '1',
   `Asset_approved` tinyint(4) NOT NULL DEFAULT '0',
   `Description` text,
-  `Entry_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+  `Entry_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `deny` tinyint(1) NOT NULL DEFAULT '0',
+  `deny_message` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `asset`
 --
 
-INSERT INTO `asset` (`Asset_ID`, `Barcode_No`, `Asset_Name`, `Asset_type`, `Asset_Category`, `Model_No`, `Brand`, `Serial_No`, `Purchase_Date`, `Warranty_End`, `Price`, `Depreciation`, `Last_Value_date`, `Original_Value`, `Current_Value`, `Vendor`, `Vendor_Address`, `Current_Division`, `Current_Room`, `Asset_Code`, `Asset_available`, `Asset_approved`, `Description`, `Entry_date`) VALUES
-(1, 123456, 'MSI Laptop', '1', '1', 'GP60 2QF', 'MSI', '3215648792130321465498751431', '2015-10-15', '2018-10-15', 140000, 0.2, '2016-08-30 22:06:45', 120000, 120000, 'RedLine Technologies', 'Bambalapitiya', 'NOC', 'W002', 'UCSC/NOC/W002/1', 1, 1, NULL, '2016-08-03 16:47:56'),
-(3, 14568, 'HP Computer', '1', '1', 'Hp-31879', 'HP', '13256-12345-15489', '0000-00-00', '0000-00-00', 123000, 0.2, '2016-06-23 22:17:43', 123000, 123000, 'DMS', 'DMS-Borella', 'NOC', 'W002', 'UCSC/NOC/W002/3', 0, 1, NULL, '2016-08-03 16:47:56'),
-(4, 112346, 'HP Laptop', '1', '1', '732678649876', 'HP', '123456-123456-456789', '0000-00-00', '0000-00-00', 200000, 0.4, '2016-06-27 14:11:57', 200000, 200000, 'DMS', 'DMS-Borella', 'NOC', 'W002', 'UCSC/NOC/W002/4', 0, 1, NULL, '2016-08-03 16:47:56'),
-(5, 54623, 'Asus Laptop', '1', '1', '1234-2134', 'Asus', '13212315-12313213-13213213', '2016-06-08', '2018-06-08', 70000, 0.1, '2016-06-30 01:42:11', 70000, 70000, 'DMS', 'DMS-Borella', 'FD', 'W002', 'UCSC/FD/W002/5', 1, 1, NULL, '2016-08-03 16:47:56'),
-(11, 123456458, 'HP Laptop', '1', '1', '123456', 'HP', '123456789', '0000-00-00', '0000-00-00', 123000, 0.3, '2016-08-08 11:06:33', 123000, 123000, 'DMS', 'DMS-Borella', 'DIR', 'W001', 'UCSC/DIR/W001/11', 1, 1, NULL, '2016-08-08 11:06:33'),
-(12, 12131, 'HP Laptop', '1', '1', '1213515646847', 'HP', '1234564647-212131-1213', '0000-00-00', '0000-00-00', 112235000, 0.2, '2016-08-30 02:11:53', 112250, 112250, 'DMS', 'DMS-Borella', 'NOC', 'W300', 'UCSC/NOC/W300/12', 1, 1, NULL, '2016-08-30 02:11:53'),
-(15, 456456, 'HP Desktop', '1', '1', '123456', 'HP', '123456489-132456478', '2016-08-23', '2019-08-23', 120000, 0.2, '2016-08-30 11:26:11', 120000, 120000, 'DMS', 'DMS-Borella', 'NOC', 'W002', 'UCSC/NOC/W002/15', 1, 1, NULL, '2016-08-30 11:26:11'),
-(16, 123456789, 'HP Laptop', '1', '1', 'GP60 2QF Leopard Pro', 'MSI', '1234567498-12345679', '2016-08-30', '2016-09-16', 140000, 0.5, '2016-08-30 13:07:00', 140000, 140000, 'RedLine Technologies', 'Bambalapitiya', 'NOC', 'W002', 'UCSC/NOC/W002/16', 1, 1, NULL, '2016-08-30 13:07:00'),
-(20, 145236987, 'HP Laptop', '1', '1', 'GP60 2QF Leopard Pro', 'MSI', '1234567498-12345679', '2016-08-30', '2016-09-16', 140000, 0.5, '2016-08-30 13:09:19', 140000, 140000, 'RedLine Technologies', 'Bambalapitiya', 'NOC', 'W001', 'UCSC/NOC/W001/20', 1, 1, NULL, '2016-08-30 13:09:19'),
-(24, 2147483647, 'HP Laptop', '1', '1', 'GP60 2QF Leopard Pro', 'MSI', '1234567498-12345679', '2016-08-30', '2016-09-16', 140000, 0.5, '2016-08-30 13:10:56', 140000, 140000, 'RedLine Technologies', 'Bambalapitiya', 'NOC', 'W002', 'UCSC/NOC/W002/24', 1, 1, NULL, '2016-08-30 13:10:56'),
-(26, 12301452, 'SINGER Laptop', '1', '1', '12345678', 'SINGER', '1420212', '2016-08-16', '2016-09-24', 13203, 0.2, '2016-08-30 16:29:15', 13203, 13203, 'Abans', 'Abans-Borella', 'NOC', 'W002', 'UCSC/NOC/W002/26', 1, 1, NULL, '2016-08-30 16:29:15'),
-(27, 1234, 'ASUS Laptop', '1', '1', '4500 series', 'ASUS', '1234567-98732165', '2016-08-31', '2017-10-10', 80000, 0.2, '2016-08-30 19:57:06', 80000, 80000, 'Barclays', 'Bambaalapitiya', 'NOC', 'W002', 'UCSC/NOC/W002/27', 1, 1, NULL, '2016-08-30 19:57:06'),
-(28, 56984, 'AlienWare Laptop', '1', '1', '3526-Alien', 'Dell', '322165546-2131313121', '2016-08-02', '2017-09-29', 500000, 0.2, '2016-08-30 23:06:14', 500000, 500000, 'Abans', 'Abans-Borella', 'NOC', 'W001', 'UCSC/NOC/W001/28', 1, 1, NULL, '2016-08-30 23:06:14'),
-(29, 1256, 'WheelChair', '3', '1', '125F', 'Damro', '', '2016-08-09', '2017-09-29', 5000, 0.3, '2016-08-30 23:18:14', 5000, 5000, 'Damro', 'Damro-Borella', 'NOC', 'W002', 'UCSC/NOC/W002/29', 1, 1, NULL, '2016-08-30 23:18:14'),
-(30, 1526, 'HP Desktop', '1', '1', '3562', 'HP', '123506-1213154', '2016-08-23', '2019-01-04', 200000, 0.2, '2016-08-31 01:21:57', 200000, 200000, 'DMS', 'DMS-Borella', 'NOC', 'W002', 'UCSC/NOC/W002/30', 1, 1, NULL, '2016-08-31 01:21:57');
+INSERT INTO `asset` (`Asset_ID`, `Barcode_No`, `Asset_Name`, `Asset_type`, `Asset_Category`, `Model_No`, `Brand`, `confirmed`, `Serial_No`, `Purchase_Date`, `Warranty_End`, `Price`, `Depreciation`, `Last_Value_date`, `Original_Value`, `Current_Value`, `Vendor`, `Vendor_Address`, `Current_Division`, `Current_Room`, `Asset_Code`, `Asset_available`, `Asset_approved`, `Description`, `Entry_date`, `deny`, `deny_message`) VALUES
+(27, 1234, 'ASUS Laptop', '1', '1', '4500 series', 'ASUS', 1, '1234567-98732165', '2016-08-31', '2017-10-10', 80000, 0.2, '2016-08-30 19:57:06', 80000, 80000, 'Barclays', 'Bambaalapitiya', 'NOC', 'W002', 'UCSC/NOC/W002/27', 1, 1, NULL, '2016-08-30 19:57:06', 0, ''),
+(31, 652301230, 'Chair', '4', '1', '100200', 'Damro', 1, '123456987', '2017-05-23', '2020-05-23', 750, 0.2, '2017-05-23 09:20:02', 750, 750, 'Saman', 'Kirulapone', 'LIB', 'W126', 'UCSC/LIB/W126/31', 1, 1, NULL, '2017-05-23 09:20:02', 0, ''),
+(32, 321654987, 'Accer Deksyop', '1', '1', '5201356', 'Accer', 0, '8520741369', '2017-05-19', '2020-06-02', 65000, 0.2, '2017-05-23 09:27:04', 65000, 65000, 'Singer', 'Singer', 'MTC', 'E302', 'UCSC/MTC/E302/32', 1, 1, NULL, '2017-05-23 09:27:04', 1, 'some system error to goes'),
+(33, 8520, 'LapTop', '1', '2', '123456', 'ASUSE', 0, '46597616', '2017-05-23', '2020-05-23', 1000, 0.2, '2017-05-23 13:10:54', 1000, 1000, 'Singer', 'Singer Colomvbo', 'APB', 'W001', 'UCSC/APB/W001/33', 1, 1, NULL, '2017-05-23 13:10:54', 1, 'sdf'),
+(34, 1004, 'q', '1', '1', 'w', 'singre', 0, '242', '2017-05-24', '2025-06-09', 500, 0.2, '2017-05-25 06:27:41', 500, 500, 'sds', 'colombo', 'LIB', 'W126', 'UCSC/LIB/W126/34', 1, 1, NULL, '2017-05-25 06:27:41', 1, 'bfdghfh'),
+(35, 242142, 'asas', '3', '2', 'asasas', 'kuh', 1, '27272272', '2017-05-25', '2020-05-26', 10000, 0.2, '2017-05-25 22:03:38', 10000, 10000, 'sdfghh', 'kuruwita', 'MTC', 'E302', 'UCSC/MTC/E302/35', 1, 1, NULL, '2017-05-25 22:03:38', 0, ''),
+(36, 2, 'z', '4', '2', '1', 'singer', 1, '3', '2017-05-26', '2020-05-26', 50, 0.1, '2017-05-26 06:52:19', 50, 50, 'singer', 'colombo', 'MTC', 'E302', 'UCSC/MTC/E302/36', 1, 1, NULL, '2017-05-26 06:52:19', 0, NULL),
+(37, 7, 'r', '4', '2', '6', 'sdfg', 1, '8', '2017-05-25', '2020-06-09', 300, 0.1, '2017-05-26 07:06:12', 300, 300, 'iu', 'kollupiyi', 'NOC', 'W002', 'UCSC/NOC/W002/37', 1, 1, NULL, '2017-05-26 07:06:12', 0, NULL),
+(38, 2147483647, 'Aaaaaaaaaaaaaaaaaa', '4', '2', '111111111111111', 'damro', 0, '333333333333333', '2017-05-27', '2025-05-31', 7500, 0.1, '2017-05-26 07:21:11', 7500, 7500, 'kjl', 'colombo 7', 'FD', 'W123', NULL, 1, 0, NULL, '2017-05-26 07:21:11', 1, '10101010');
 
 -- --------------------------------------------------------
 
@@ -80,12 +77,12 @@ INSERT INTO `asset` (`Asset_ID`, `Barcode_No`, `Asset_Name`, `Asset_type`, `Asse
 -- Table structure for table `asset_category`
 --
 
-CREATE TABLE IF NOT EXISTS `asset_category` (
+CREATE TABLE `asset_category` (
   `asset_category_id` int(11) NOT NULL,
   `asset_category` varchar(60) NOT NULL,
   `category_description` text NOT NULL,
   `type_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `asset_category`
@@ -102,7 +99,7 @@ INSERT INTO `asset_category` (`asset_category_id`, `asset_category`, `category_d
 -- Table structure for table `asset_movement`
 --
 
-CREATE TABLE IF NOT EXISTS `asset_movement` (
+CREATE TABLE `asset_movement` (
   `asset_id` int(11) NOT NULL,
   `old_division` varchar(4) DEFAULT NULL,
   `old_room` varchar(4) DEFAULT NULL,
@@ -158,7 +155,27 @@ INSERT INTO `asset_movement` (`asset_id`, `old_division`, `old_room`, `new_divis
 (12, 'NOC', 'W300', 'APB', '', NULL, '2016-08-30 21:11:34', NULL, 4, NULL),
 (30, '+', '+', 'NOC', 'W002', 1, '2016-08-30 21:52:16', '2016-08-30 21:52:27', 11, 4),
 (1, 'NOC', 'W002', 'NOC', 'W002', 1, '2016-08-30 22:13:51', '2016-08-30 22:13:57', 4, 4),
-(20, 'NOC', 'W002', 'NOC', 'W001', 1, '2016-08-31 12:06:44', '2016-08-31 12:06:52', 4, 4);
+(20, 'NOC', 'W002', 'NOC', 'W001', 1, '2016-08-31 12:06:44', '2016-08-31 12:06:52', 4, 4),
+(31, '+', '+', 'LIB', 'W126', NULL, '2017-05-23 05:58:59', NULL, 11, NULL),
+(32, '+', '+', 'MTC', 'E302', NULL, '2017-05-23 05:59:03', NULL, 11, NULL),
+(27, 'NOC', 'W002', 'SDU', 'N003', 1, '2017-05-23 06:07:06', '2017-05-25 17:30:31', 4, 4),
+(34, '+', '+', 'LIB', 'W126', NULL, '2017-05-25 02:58:30', NULL, 11, NULL),
+(27, '+', '+', 'NOC', 'W002', 1, '2017-05-25 03:59:46', '2017-05-25 17:30:31', 24, 4),
+(34, '+', '+', 'LIB', 'W126', NULL, '2017-05-25 04:00:47', NULL, 24, NULL),
+(34, '+', '+', 'LIB', 'W126', NULL, '2017-05-25 06:36:27', NULL, 24, NULL),
+(34, '+', '+', 'LIB', 'W126', NULL, '2017-05-25 06:37:09', NULL, 24, NULL),
+(33, '+', '+', 'APB', 'W001', NULL, '2017-05-25 06:38:51', NULL, 24, NULL),
+(27, '+', '+', 'NOC', 'W002', 1, '2017-05-25 16:31:53', '2017-05-25 17:30:31', 24, 4),
+(34, '+', '+', 'LIB', 'W126', NULL, '2017-05-25 17:39:34', NULL, 24, NULL),
+(34, '+', '+', 'LIB', 'W126', NULL, '2017-05-25 17:49:14', NULL, 24, NULL),
+(27, '+', '+', 'NOC', 'W002', 1, '2017-05-25 18:31:29', '2017-05-26 03:32:54', 24, 4),
+(34, '+', '+', 'LIB', 'W126', NULL, '2017-05-25 18:36:35', NULL, 24, NULL),
+(0, '+', '+', '', '', NULL, '2017-05-25 19:12:15', NULL, 24, NULL),
+(36, '+', '+', 'MTC', 'E302', NULL, '2017-05-26 03:23:49', NULL, 11, NULL),
+(35, '+', '+', 'MTC', 'E302', NULL, '2017-05-26 03:32:00', NULL, 11, NULL),
+(37, '+', '+', 'FD', 'W123', 1, '2017-05-26 03:37:38', '2017-05-26 03:46:40', 11, 25),
+(27, 'NOC', 'W002', 'MTC', 'E302', NULL, '2017-05-26 03:40:10', NULL, 4, NULL),
+(37, 'FD', 'W123', 'NOC', 'W002', 1, '2017-05-26 03:47:38', '2017-05-29 14:49:31', 25, 4);
 
 -- --------------------------------------------------------
 
@@ -166,7 +183,7 @@ INSERT INTO `asset_movement` (`asset_id`, `old_division`, `old_room`, `new_divis
 -- Table structure for table `asset_photo`
 --
 
-CREATE TABLE IF NOT EXISTS `asset_photo` (
+CREATE TABLE `asset_photo` (
   `asset_id` int(11) NOT NULL,
   `asset_photo_id` varchar(60) NOT NULL,
   `photo_path` text NOT NULL,
@@ -192,11 +209,11 @@ INSERT INTO `asset_photo` (`asset_id`, `asset_photo_id`, `photo_path`, `verified
 -- Table structure for table `asset_type`
 --
 
-CREATE TABLE IF NOT EXISTS `asset_type` (
+CREATE TABLE `asset_type` (
   `asset_type_id` int(11) NOT NULL,
   `asset_type` varchar(60) NOT NULL,
   `type_description` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `asset_type`
@@ -213,7 +230,7 @@ INSERT INTO `asset_type` (`asset_type_id`, `asset_type`, `type_description`) VAL
 -- Table structure for table `bos`
 --
 
-CREATE TABLE IF NOT EXISTS `bos` (
+CREATE TABLE `bos` (
   `record_id` int(11) NOT NULL,
   `new_barcode` int(11) NOT NULL,
   `current_division` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -223,7 +240,7 @@ CREATE TABLE IF NOT EXISTS `bos` (
   `checked` int(11) NOT NULL,
   `location_change` int(11) NOT NULL,
   `re_valueable` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `bos`
@@ -239,7 +256,7 @@ INSERT INTO `bos` (`record_id`, `new_barcode`, `current_division`, `current_room
 -- Table structure for table `depreciation`
 --
 
-CREATE TABLE IF NOT EXISTS `depreciation` (
+CREATE TABLE `depreciation` (
   `Date` datetime NOT NULL,
   `Barcode` int(11) NOT NULL,
   `Previous_Value` float NOT NULL,
@@ -259,7 +276,7 @@ INSERT INTO `depreciation` (`Date`, `Barcode`, `Previous_Value`, `New_Value`) VA
 -- Table structure for table `division`
 --
 
-CREATE TABLE IF NOT EXISTS `division` (
+CREATE TABLE `division` (
   `Division_Code` varchar(4) NOT NULL,
   `Division_Name` varchar(60) NOT NULL,
   `Description` text
@@ -270,6 +287,7 @@ CREATE TABLE IF NOT EXISTS `division` (
 --
 
 INSERT INTO `division` (`Division_Code`, `Division_Name`, `Description`) VALUES
+('8462', 'Game Development Lab', 'every day working  7to7'),
 ('APB', 'Academic and Publications Branch', ''),
 ('DIR', 'Director Office', 'Hello'),
 ('FD', 'Finance Department', 'Money goes here'),
@@ -285,7 +303,7 @@ INSERT INTO `division` (`Division_Code`, `Division_Name`, `Description`) VALUES
 -- Table structure for table `message`
 --
 
-CREATE TABLE IF NOT EXISTS `message` (
+CREATE TABLE `message` (
   `Message_id` int(11) NOT NULL,
   `From_Division` varchar(4) NOT NULL,
   `To_Division` varchar(4) NOT NULL,
@@ -293,7 +311,7 @@ CREATE TABLE IF NOT EXISTS `message` (
   `Message` text NOT NULL,
   `Date_Time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `Message_read` tinyint(4) DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `message`
@@ -307,7 +325,12 @@ INSERT INTO `message` (`Message_id`, `From_Division`, `To_Division`, `Title`, `M
 (5, 'DIR', 'NOC', 'Need 2 routers', 'We are in need of 2 routers\r\n', '2016-08-30 02:26:34', 1),
 (6, 'DIR', 'NOC', 'Need 2 router', 'mksdnl;ksadj;s', '2016-08-30 02:28:55', 1),
 (7, 'APB', 'APB', 'Need 2 routers', 'Need 2 routers', '2016-08-30 02:30:00', 0),
-(8, 'NOC', 'LIB', 'nksdlhokdsgh', 'nlkasfnlkfadsjlkajfd', '2016-08-30 21:05:14', 0);
+(8, 'NOC', 'LIB', 'nksdlhokdsgh', 'nlkasfnlkfadsjlkajfd', '2016-08-30 21:05:14', 0),
+(9, 'APB', 'MTC', 'For New Projector', 'We need 2 projectors', '2017-03-08 11:32:11', 0),
+(10, 'APB', 'DIR', '2 tables', 'for new presentation', '2017-03-08 11:48:46', 0),
+(11, '', 'NOC', 'new academic tools', 'asdagdjkal', '2017-03-08 11:50:41', 0),
+(12, 'NOC', 'DIR', 'LapTop', 'Imediately Change', '2017-05-23 10:10:00', 0),
+(13, 'NOC', 'FD', 'gaminglap', 'need more than 10', '2017-05-26 07:12:31', 0);
 
 -- --------------------------------------------------------
 
@@ -315,7 +338,7 @@ INSERT INTO `message` (`Message_id`, `From_Division`, `To_Division`, `Title`, `M
 -- Table structure for table `room`
 --
 
-CREATE TABLE IF NOT EXISTS `room` (
+CREATE TABLE `room` (
   `Room_code` varchar(4) NOT NULL,
   `Room_name` varchar(60) NOT NULL,
   `Division` varchar(4) NOT NULL,
@@ -350,7 +373,7 @@ INSERT INTO `room` (`Room_code`, `Room_name`, `Division`, `Wing`, `Floor`, `Desc
 -- Table structure for table `temp_asset`
 --
 
-CREATE TABLE IF NOT EXISTS `temp_asset` (
+CREATE TABLE `temp_asset` (
   `Temp_asset_id` int(11) NOT NULL,
   `Asset_Name` varchar(60) NOT NULL,
   `Asset_Description` text NOT NULL,
@@ -361,7 +384,7 @@ CREATE TABLE IF NOT EXISTS `temp_asset` (
   `Asset_Resolved` tinyint(1) NOT NULL DEFAULT '0',
   `Related_asset` int(11) DEFAULT NULL,
   `Barcode` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `temp_asset`
@@ -377,7 +400,7 @@ INSERT INTO `temp_asset` (`Temp_asset_id`, `Asset_Name`, `Asset_Description`, `A
 -- Table structure for table `user`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
+CREATE TABLE `user` (
   `user_ID` int(11) NOT NULL,
   `user_email` varchar(60) NOT NULL,
   `user_password` varchar(128) NOT NULL,
@@ -387,22 +410,36 @@ CREATE TABLE IF NOT EXISTS `user` (
   `division` varchar(4) NOT NULL,
   `gender` varchar(1) NOT NULL,
   `Contact_Number` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`user_ID`, `user_email`, `user_password`, `first_name`, `last_name`, `user_level`, `division`, `gender`, `Contact_Number`) VALUES
-(4, 'abc@gmail.com', '$2y$10$ydz4Z0y7aF0mhRvf8e7vHOj7HnmvthLzEx1cYi2MnToQY3ALYKclq', 'Thilina', 'Viraj', 'div_asset_clerk', 'NOC', 'm', '0719783950'),
-(5, 'gihanishara926@gmail.com', '$2y$10$0lJwAG.PZPub5JPSq.HcxOR2ZSLkTr.LHvzXZ/6p0hEbB44D0a8mi', 'Hasith', 'Thenuwara', 'system_admin', 'DIR', 'm', '0718822516'),
-(8, 'kavinda.rasnayake@gmail.com', '$2y$10$9F8j5oOp9h5mQt/T9q0JG.2i5DhxdFcanrw1GufR2gZyA3wzZHkDO', 'Kavinda', 'Rasnayake', 'div_asset_clerk', 'FD', 'm', '0771234567'),
-(10, 'shyamah@gmail.com', '$2y$10$tflQgDQbXvFwoNjedboFN.LxtcrG48MY5a0w1QpaRI0xlG16xlffu', 'Shyama', 'Hemachaya', 'asset_clerk', 'FD', 'm', '0714856132'),
-(11, 'shyamahemachaya@gmail.com', '$2y$10$hpGAR5KJbmVMIL8tMymxXuVmkrYV6IgsrOHNw3uBXlpXf8cfciCVO', 'Shyama', 'Hemachaya', 'bursar', 'FD', 'm', '0714813659'),
+(4, 'abc@gmail.com', '$2y$10$ydz4Z0y7aF0mhRvf8e7vHOj7HnmvthLzEx1cYi2MnToQY3ALYKclq', 'Aaaa', 'Bbb', 'div_asset_clerk', 'NOC', 'm', '0719783950'),
+(5, 'gihanishara926@gmail.com', '$2y$10$0lJwAG.PZPub5JPSq.HcxOR2ZSLkTr.LHvzXZ/6p0hEbB44D0a8mi', 'Gihan', 'Ranatunga', 'system_admin', 'DIR', 'm', '0766380145'),
+(10, 'clerk@gmail.com', '$2y$10$tflQgDQbXvFwoNjedboFN.LxtcrG48MY5a0w1QpaRI0xlG16xlffu', 'Cccc', 'Ddd', 'asset_clerk', 'FD', 'm', '0714856132'),
+(11, 'burser@gmail.com', '$2y$10$hpGAR5KJbmVMIL8tMymxXuVmkrYV6IgsrOHNw3uBXlpXf8cfciCVO', 'Qqq', 'Eeee', 'bursar', 'FD', 'm', '0714813659'),
 (12, 'hasiththeyaka@gmail.com', '$2y$10$cxSyOfmoAr/cbXM20qoJsOnSYN/ID9wixqhIUQGCiuqbR5y3Dv0RO', 'Hasith', 'Yaka', 'temp_user', 'APB', 'm', '0716532185'),
-(13, 'lasithniroshan@gmail.com', '$2y$10$JAyJiwBzP60FELO1e4bKNeEshjTFZzkWVf1PqFg9rGkrShis5i/C2', 'Lasith', 'Niroshan', 'div_asset_clerk', 'APB', 'm', '0711234567'),
-(14, 'surangi@gmail.com', '$2y$10$KtkHMAN1b.aeO5kw3q7AyOgbYVSBis8F1DiuC/vNYvNl489k25DKi', 'suran', 'Edirisinghe', 'div_asset_clerk', 'APB', 'f', '0778053963'),
-(16, 'rasnayake.kavinda@gmail.com', '$2y$10$pQLa.cyvNfPhOCEteFXImO5rxg34FNsjs09HKPUpBMs.twjFTWhh6', 'Keshan', 'Rasnayake', 'system_admin', 'FD', 'm', '0716231506');
+(22, 'gihan@gmail.com', '$2y$10$cxCHV0EA/LUIqq7l1NlEe.eX9tqVnhjvl7PMmlMqxXm8kz3XJZWFi', 'giiii', 'issss', 'div_asset_clerk', 'APB', 'm', '0714589101'),
+(23, 'ucsc@gmail.com', '$2y$10$21oit3L/2A.QI4emb/1/euNGiWFEUceaGLEZH20iW1DHulqwBwZA.', 'ucsc', 'colombo', 'dp_registrar', 'FD', 'm', '0714554456'),
+(24, 'teka@gmail.com', '$2y$10$jFi5GSDk4lnTeWBOzPleXO5B.yRQaCBJ7YCi.HICWHZkpMicnA.Z2', 'Tech', 'Man', 'electrician', 'FD', 'm', '0715498201'),
+(25, 'acount@gmail.com', '$2y$10$Mqb9FKLFRCELlKqaqII8kuE2icphrTbhE.f5t2ZxYVZDcsuAZSypi', 'acout', 'handle', 'div_asset_clerk', 'FD', 'm', '0112428428');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `ID` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `status` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -473,6 +510,12 @@ ALTER TABLE `user`
   ADD KEY `user_email_2` (`user_email`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -480,37 +523,42 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `asset`
 --
 ALTER TABLE `asset`
-  MODIFY `Asset_ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
+  MODIFY `Asset_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT for table `asset_category`
 --
 ALTER TABLE `asset_category`
-  MODIFY `asset_category_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `asset_category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `asset_type`
 --
 ALTER TABLE `asset_type`
-  MODIFY `asset_type_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `asset_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `bos`
 --
 ALTER TABLE `bos`
-  MODIFY `record_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `record_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `Message_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `Message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `temp_asset`
 --
 ALTER TABLE `temp_asset`
-  MODIFY `Temp_asset_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `Temp_asset_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
