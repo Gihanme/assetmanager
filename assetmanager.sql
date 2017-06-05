@@ -34,7 +34,6 @@ CREATE TABLE `asset` (
   `Asset_Category` varchar(60) NOT NULL,
   `Model_No` varchar(60) NOT NULL,
   `Brand` varchar(60) NOT NULL,
-  `confirmed` tinyint(1) NOT NULL DEFAULT '0',
   `Serial_No` varchar(60) NOT NULL,
   `Purchase_Date` date NOT NULL,
   `Warranty_End` date NOT NULL,
@@ -52,24 +51,32 @@ CREATE TABLE `asset` (
   `Asset_approved` tinyint(4) NOT NULL DEFAULT '0',
   `Description` text,
   `Entry_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `deny` tinyint(1) NOT NULL DEFAULT '0',
-  `deny_message` varchar(500) DEFAULT NULL
+  `Image` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `asset`
 --
 
-INSERT INTO `asset` (`Asset_ID`, `Barcode_No`, `Asset_Name`, `Asset_type`, `Asset_Category`, `Model_No`, `Brand`, `confirmed`, `Serial_No`, `Purchase_Date`, `Warranty_End`, `Price`, `Depreciation`, `Last_Value_date`, `Original_Value`, `Current_Value`, `Vendor`, `Vendor_Address`, `Current_Division`, `Current_Room`, `Asset_Code`, `Asset_available`, `Asset_approved`, `Description`, `Entry_date`, `deny`, `deny_message`) VALUES
-(27, 1234, 'ASUS Laptop', '1', '1', '4500 series', 'ASUS', 1, '1234567-98732165', '2016-08-31', '2017-10-10', 80000, 0.2, '2016-08-30 19:57:06', 80000, 80000, 'Barclays', 'Bambaalapitiya', 'NOC', 'W002', 'UCSC/NOC/W002/27', 1, 1, NULL, '2016-08-30 19:57:06', 0, ''),
-(31, 652301230, 'Chair', '4', '1', '100200', 'Damro', 1, '123456987', '2017-05-23', '2020-05-23', 750, 0.2, '2017-05-23 09:20:02', 750, 750, 'Saman', 'Kirulapone', 'LIB', 'W126', 'UCSC/LIB/W126/31', 1, 1, NULL, '2017-05-23 09:20:02', 0, ''),
-(32, 321654987, 'Accer Deksyop', '1', '1', '5201356', 'Accer', 0, '8520741369', '2017-05-19', '2020-06-02', 65000, 0.2, '2017-05-23 09:27:04', 65000, 65000, 'Singer', 'Singer', 'MTC', 'E302', 'UCSC/MTC/E302/32', 1, 1, NULL, '2017-05-23 09:27:04', 1, 'some system error to goes'),
-(33, 8520, 'LapTop', '1', '2', '123456', 'ASUSE', 0, '46597616', '2017-05-23', '2020-05-23', 1000, 0.2, '2017-05-23 13:10:54', 1000, 1000, 'Singer', 'Singer Colomvbo', 'APB', 'W001', 'UCSC/APB/W001/33', 1, 1, NULL, '2017-05-23 13:10:54', 1, 'sdf'),
-(34, 1004, 'q', '1', '1', 'w', 'singre', 0, '242', '2017-05-24', '2025-06-09', 500, 0.2, '2017-05-25 06:27:41', 500, 500, 'sds', 'colombo', 'LIB', 'W126', 'UCSC/LIB/W126/34', 1, 1, NULL, '2017-05-25 06:27:41', 1, 'bfdghfh'),
-(35, 242142, 'asas', '3', '2', 'asasas', 'kuh', 1, '27272272', '2017-05-25', '2020-05-26', 10000, 0.2, '2017-05-25 22:03:38', 10000, 10000, 'sdfghh', 'kuruwita', 'MTC', 'E302', 'UCSC/MTC/E302/35', 1, 1, NULL, '2017-05-25 22:03:38', 0, ''),
-(36, 2, 'z', '4', '2', '1', 'singer', 1, '3', '2017-05-26', '2020-05-26', 50, 0.1, '2017-05-26 06:52:19', 50, 50, 'singer', 'colombo', 'MTC', 'E302', 'UCSC/MTC/E302/36', 1, 1, NULL, '2017-05-26 06:52:19', 0, NULL),
-(37, 7, 'r', '4', '2', '6', 'sdfg', 1, '8', '2017-05-25', '2020-06-09', 300, 0.1, '2017-05-26 07:06:12', 300, 300, 'iu', 'kollupiyi', 'NOC', 'W002', 'UCSC/NOC/W002/37', 1, 1, NULL, '2017-05-26 07:06:12', 0, NULL),
-(38, 2147483647, 'Aaaaaaaaaaaaaaaaaa', '4', '2', '111111111111111', 'damro', 0, '333333333333333', '2017-05-27', '2025-05-31', 7500, 0.1, '2017-05-26 07:21:11', 7500, 7500, 'kjl', 'colombo 7', 'FD', 'W123', NULL, 1, 0, NULL, '2017-05-26 07:21:11', 1, '10101010');
+INSERT INTO `asset` (`Asset_ID`, `Barcode_No`, `Asset_Name`, `Asset_type`, `Asset_Category`, `Model_No`, `Brand`, `Serial_No`, `Purchase_Date`, `Warranty_End`, `Price`, `Depreciation`, `Last_Value_date`, `Original_Value`, `Current_Value`, `Vendor`, `Vendor_Address`, `Current_Division`, `Current_Room`, `Asset_Code`, `Asset_available`, `Asset_approved`, `Description`, `Entry_date`, `Image`) VALUES
+(1, 123456, 'MSI Laptop', '1', '1', 'GP60 2QF', 'MSI', '3215648792130321465498751431', '2015-10-15', '2018-10-15', 140000, 0.2, '2016-08-30 22:06:45', 120000, 120000, 'RedLine Technologies', 'Bambalapitiya', 'NOC', 'W002', 'UCSC/NOC/W002/1', 1, 1, NULL, '2016-08-03 16:47:56', ''),
+(3, 14568, 'HP Computer', '1', '1', 'Hp-31879', 'HP', '13256-12345-15489', '0000-00-00', '0000-00-00', 123000, 0.2, '2016-06-23 22:17:43', 123000, 123000, 'DMS', 'DMS-Borella', 'NOC', 'W002', 'UCSC/NOC/W002/3', 0, 1, NULL, '2016-08-03 16:47:56', ''),
+(4, 112346, 'HP Laptop', '1', '1', '732678649876', 'HP', '123456-123456-456789', '0000-00-00', '0000-00-00', 200000, 0.4, '2016-06-27 14:11:57', 200000, 200000, 'DMS', 'DMS-Borella', 'NOC', 'W002', 'UCSC/NOC/W002/4', 0, 1, NULL, '2016-08-03 16:47:56', ''),
+(5, 54623, 'Asus Laptop', '1', '1', '1234-2134', 'Asus', '13212315-12313213-13213213', '2016-06-08', '2018-06-08', 70000, 0.1, '2016-06-30 01:42:11', 70000, 70000, 'DMS', 'DMS-Borella', 'FD', 'W002', 'UCSC/FD/W002/5', 1, 1, NULL, '2016-08-03 16:47:56', ''),
+(11, 123456458, 'HP Laptop', '1', '1', '123456', 'HP', '123456789', '0000-00-00', '0000-00-00', 123000, 0.3, '2016-08-08 11:06:33', 123000, 123000, 'DMS', 'DMS-Borella', 'DIR', 'W001', 'UCSC/DIR/W001/11', 1, 1, NULL, '2016-08-08 11:06:33', ''),
+(12, 12131, 'HP Laptop', '1', '1', '1213515646847', 'HP', '1234564647-212131-1213', '0000-00-00', '0000-00-00', 112235000, 0.2, '2016-08-30 02:11:53', 112250, 112250, 'DMS', 'DMS-Borella', 'NOC', 'W300', 'UCSC/NOC/W300/12', 1, 1, NULL, '2016-08-30 02:11:53', ''),
+(15, 456456, 'HP Desktop', '1', '1', '123456', 'HP', '123456489-132456478', '2016-08-23', '2019-08-23', 120000, 0.2, '2016-08-30 11:26:11', 120000, 120000, 'DMS', 'DMS-Borella', 'NOC', 'W002', 'UCSC/NOC/W002/15', 1, 1, NULL, '2016-08-30 11:26:11', ''),
+(16, 123456789, 'HP Laptop', '1', '1', 'GP60 2QF Leopard Pro', 'MSI', '1234567498-12345679', '2016-08-30', '2016-09-16', 140000, 0.5, '2016-08-30 13:07:00', 140000, 140000, 'RedLine Technologies', 'Bambalapitiya', 'NOC', 'W002', 'UCSC/NOC/W002/16', 1, 1, NULL, '2016-08-30 13:07:00', ''),
+(20, 145236987, 'HP Laptop', '1', '1', 'GP60 2QF Leopard Pro', 'MSI', '1234567498-12345679', '2016-08-30', '2016-09-16', 140000, 0.5, '2016-08-30 13:09:19', 140000, 140000, 'RedLine Technologies', 'Bambalapitiya', 'NOC', 'W001', 'UCSC/NOC/W001/20', 1, 1, NULL, '2016-08-30 13:09:19', ''),
+(24, 2147483647, 'HP Laptop', '1', '1', 'GP60 2QF Leopard Pro', 'MSI', '1234567498-12345679', '2016-08-30', '2016-09-16', 140000, 0.5, '2016-08-30 13:10:56', 140000, 140000, 'RedLine Technologies', 'Bambalapitiya', 'NOC', 'W002', 'UCSC/NOC/W002/24', 1, 1, NULL, '2016-08-30 13:10:56', ''),
+(26, 12301452, 'SINGER Laptop', '1', '1', '12345678', 'SINGER', '1420212', '2016-08-16', '2016-09-24', 13203, 0.2, '2016-08-30 16:29:15', 13203, 13203, 'Abans', 'Abans-Borella', 'NOC', 'W002', 'UCSC/NOC/W002/26', 1, 1, NULL, '2016-08-30 16:29:15', ''),
+(27, 1234, 'ASUS Laptop', '1', '1', '4500 series', 'ASUS', '1234567-98732165', '2016-08-31', '2017-10-10', 80000, 0.2, '2016-08-30 19:57:06', 80000, 80000, 'Barclays', 'Bambaalapitiya', 'NOC', 'W002', 'UCSC/NOC/W002/27', 1, 1, NULL, '2016-08-30 19:57:06', ''),
+(28, 56984, 'AlienWare Laptop', '1', '1', '3526-Alien', 'Dell', '322165546-2131313121', '2016-08-02', '2017-09-29', 500000, 0.2, '2016-08-30 23:06:14', 500000, 500000, 'Abans', 'Abans-Borella', 'NOC', 'W001', 'UCSC/NOC/W001/28', 1, 1, NULL, '2016-08-30 23:06:14', ''),
+(29, 1256, 'WheelChair', '3', '1', '125F', 'Damro', '', '2016-08-09', '2017-09-29', 5000, 0.3, '2016-08-30 23:18:14', 5000, 5000, 'Damro', 'Damro-Borella', 'NOC', 'W002', 'UCSC/NOC/W002/29', 1, 1, NULL, '2016-08-30 23:18:14', ''),
+(30, 1526, 'HP Desktop', '1', '1', '3562', 'HP', '123506-1213154', '2016-08-23', '2019-01-04', 200000, 0.2, '2016-08-31 01:21:57', 200000, 200000, 'DMS', 'DMS-Borella', 'NOC', 'W002', 'UCSC/NOC/W002/30', 1, 1, NULL, '2016-08-31 01:21:57', ''),
+(31, 22222, 'abc', '1', '1', '123', 'abc', '123567823', '2017-05-29', '1970-01-01', 14000, 0.5, '2017-05-29 16:57:55', 14000, 14000, 'aba', 'abc,123', 'APB', 'W123', NULL, 1, 0, NULL, '2017-05-29 16:57:55', ''),
+(32, 33333, 'abc', '1', '1', '123456', 'abc', '333', '2017-05-29', '1970-01-01', 1500, 0.6, '2017-05-29 17:28:48', 1500, 1500, 'aba', 'tafdgh', 'APB', '112', NULL, 1, 0, NULL, '2017-05-29 17:28:48', ''),
+(34, 11111111, 'abc', '1', '1', '2345', 'abcd', '1111111', '2017-05-29', '1970-01-01', 13000, 0.8, '2017-05-29 17:39:23', 13000, 13000, 'thilini', 'ac, 123', 'APB', '112', NULL, 1, 0, NULL, '2017-05-29 17:39:23', 'asset_images/1496059763.jpg');
 
 -- --------------------------------------------------------
 
@@ -195,14 +202,7 @@ CREATE TABLE `asset_photo` (
 --
 
 INSERT INTO `asset_photo` (`asset_id`, `asset_photo_id`, `photo_path`, `verified`) VALUES
-(1, 'Warframe0011.jpg', 'asset_images/1/Warframe0011.jpg', 1),
-(1, 'Warframe0012.jpg', 'asset_images/1/Warframe0012.jpg', 1),
-(1, 'Warframe0042.jpg', 'asset_images/1/Warframe0042.jpg', 1),
-(1, 'Warframe0043.jpg', 'asset_images/1/Warframe0043.jpg', 1),
-(1, 'Warframe0044.jpg', 'asset_images/1/Warframe0044.jpg', 1),
-(4, 'Warframe0215.jpg', 'asset_images/4/Warframe0215.jpg', 1),
-(4, 'Warframe0215.jpg', 'asset_images/4/Warframe0215.jpg', 1);
-
+(34, '1496059763.jpg', 'asset_images/1496059763.jpg', 1);
 -- --------------------------------------------------------
 
 --
