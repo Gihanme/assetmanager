@@ -451,7 +451,7 @@ $(function() {
                     <td align="style="justify"><strong >&nbsp;&nbsp;Depreciation </strong></td>
                     <td><input type="text" class="form-control" value="" name="deprec"/></td>
 		                                
-                    <td align="style="justify"><strong >&nbsp;&nbsp;Warranty Period  </strong></td>
+                    <td align="style=justify"><strong >&nbsp;&nbsp;Warranty Period  </strong></td>
 
                     <td>          
                 
@@ -460,7 +460,7 @@ $(function() {
                 
 				</tr>
         <tr>
-                    <td align="style="justify"><strong >&nbsp;&nbsp;Select File</strong  ></td>
+                    <td align="style=justify"><strong >&nbsp;&nbsp;Select File</strong  ></td>
                     <td><input type="file" name="image" > </td> 
                     
                        
