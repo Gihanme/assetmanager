@@ -93,47 +93,49 @@ if(empty($_POST['vendor_add'])){
     }
     
 if(empty($_POST['brand'])){
-        $brandErr = "Brand name is required";
-        $error += 1;
-    }
-    else{
-        $brand= test_input($_POST['brand']);
-        
-    }
+    $brandErr = "Brand name is required";
+    $error += 1;
+}
+else{
+    $brand= test_input($_POST['brand']);
+
+}
     
     
     
     if ($error == 0 ){
-    $item_name = $_POST['name'];
-    $item_type = $_POST['type'];
-    $vendor = $_POST['vendor'];
-    $vendor_add = $_POST['vendor_add'];
-    $period = $_POST['datefilter'];
-    //$year = $_POST['year'];
-    $dates = explode("-", $period);
-    $p_date = $dates[0];
-    $w_end = $dates[1];
-    $mid = strtotime($p_date);
-    $p_date = date("Y-m-d", $mid);
-    $sid = strtotime($w_end);
-    $w_end = date("Y-m-d", $sid);
-    
-    $value = $_POST['price'];
-    $model = $_POST['model'];
-    $brand = $_POST['brand'];
-    $serial_no = $_POST['serial'];
-    $barcode_no=$_POST['barcode'];
-    $deprec = $_POST['deprec'];
-    $division = $_POST['division'];
-    $room = $_POST['room'];
-    $item_category = $_POST['category'];
-    
-    require_once "uploadimage.php";
-    if(isset($newname)){
-      $log->add_asset($item_name, $item_type, $item_category, $vendor, $vendor_add, $p_date, $w_end, $serial_no, $value, $model, $brand, $barcode_no, $division, $room, $deprec, $newname);
-    }else{
-      echo "Error uploading image";
-    }
+        $item_name = $_POST['name'];
+        $item_type = $_POST['type'];
+        $vendor = $_POST['vendor'];
+        $vendor_add = $_POST['vendor_add'];
+        $period = $_POST['datefilter'];
+        //$year = $_POST['year'];
+        $dates = explode("-", $period);
+        $p_date = $dates[0];
+        $w_end = $dates[1];
+        $mid = strtotime($p_date);
+        $p_date = date("Y-m-d", $mid);
+        $sid = strtotime($w_end);
+        $w_end = date("Y-m-d", $sid);
+
+        $value = $_POST['price'];
+        $model = $_POST['model'];
+        $brand = $_POST['brand'];
+        $serial_no = $_POST['serial'];
+        $barcode_no=$_POST['barcode'];
+        $deprec = $_POST['deprec'];
+        $division = $_POST['division'];
+        $room = $_POST['room'];
+        $item_category = $_POST['category'];
+
+        require_once "uploadimage.php";
+        #if(isset($newname)){
+          $log->add_asset($item_name, $item_type, $item_category, $vendor, $vendor_add, $p_date, $w_end, $serial_no, $value, $model, $brand, $barcode_no, $division, $room, $deprec);
+            
+            #echo "asdjdkf";
+        #}else{
+        #  echo "Error uploading image";
+        #}
     
     
     }
@@ -500,9 +502,12 @@ $(function() {
     </div>
                     
         <div class="col-sm-offset-10 col-sm-3">
+<!--
             <button class="btn btn-default" data-href="/delete.php?id=54" data-toggle="modal" data-target="#confirm-delete">
-        Submit
+        Submitasda
     </button>
+-->
+            <input type="submit"/>
             
 	</div>                       
                     <script type="text/javascript">

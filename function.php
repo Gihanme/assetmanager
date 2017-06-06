@@ -31,10 +31,10 @@ class FAssetClerk{
     }
     /**This is function for adding assets.  */
     
-    function add_asset($item_name, $item_type, $item_category, $vendor, $vendor_add, $p_date, $w_end, $serial_no, $value, $model, $brand, $barcode_no, $division, $room, $deprec = 0.2, $img){
+    function add_asset($item_name, $item_type, $item_category, $vendor, $vendor_add, $p_date, $w_end, $serial_no, $value, $model, $brand, $barcode_no, $division, $room, $deprec = 0.2){
         
-        $que1 = "INSERT INTO asset(Asset_Name, Asset_type, Asset_Category, Model_No, Brand, Serial_No, Purchase_Date, Warranty_End, Price,Original_Value, Current_Value, Depreciation, Vendor, Vendor_Address,  Current_Division, Current_Room,Barcode_No, Image) "
-                . "VALUES ('$item_name','$item_type', '$item_category', '$model', '$brand', '$serial_no', '$p_date', '$w_end',$value ,$value ,$value , $deprec, '$vendor','$vendor_add', '$division','$room' ,'$barcode_no', '$img'); ";
+        $que1 = "INSERT INTO asset(Asset_Name, Asset_type, Asset_Category, Model_No, Brand, Serial_No, Purchase_Date, Warranty_End, Price,Original_Value, Current_Value, Depreciation, Vendor, Vendor_Address,  Current_Division, Current_Room,Barcode_No) "
+                . "VALUES ('$item_name','$item_type', '$item_category', '$model', '$brand', '$serial_no', '$p_date', '$w_end',$value ,$value ,$value , $deprec, '$vendor','$vendor_add', '$division','$room' ,'$barcode_no'); ";
         //try{
             //echo "$que1";
             $res = $this->db->dbh->query($que1);
@@ -184,6 +184,11 @@ class FAssetClerk{
     function view_asset($asset_id){
 
         return $this->db->dbh->query("SELECT * FROM asset WHERE Asset_ID='$asset_id'");
+    }
+    
+    function show_deny(){
+
+        return $this->db->dbh->query("SELECT * FROM asset WHERE deny=1");
     }
 
     function move_asset($asset_id, $division, $room, $move_user){
