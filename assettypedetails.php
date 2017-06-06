@@ -30,11 +30,11 @@ $last_name = $user_details['last_name'];
   <link href="css/custom.css" rel="stylesheet">
   <link href="css/icheck/flat/green.css" rel="stylesheet">
 
-  <link href="css/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-  <link href="css/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="css/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="css/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="css/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="js/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+  <link href="js/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="js/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="js/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="js/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
 
   <script src="js/jquery.min.js"></script>
 
@@ -73,11 +73,17 @@ $last_name = $user_details['last_name'];
 
             <div class="menu_section">
            <!--   <h3>General</h3> -->
-              <ul class="nav side-menu">
-                <li><a href="sys_admin.php"><i class="fa fa-home"></i> Home </span></a></li>
+              <ul class="nav side-menu">			  
+				<li><a href="createDivision.php"><i class="fa fa-building"></i> Create Division </span></a></li>
+                <li><a href="divisionDetails.php"><i class="fa fa-building"></i> View Divisions </span></a></li>
+                <li><a href="createRoom.php"><i class="fa fa-building"></i> Create Room </span></a></li>
+                <li><a href="roomdetails.php"><i class="fa fa-building"></i> View Rooms </span></a></li>		
+                <li><a href="createuser.php"><i class="fa fa-user"></i> Create User </span></a></li>
+                <li><a href="userDetails.php"><i class="fa fa-user"></i> View Users </span></a></li>
+                <li><a href="create_itemcategory.php"><i class="fa fa-user"></i> Create asset category</a></li>
+                <li><a href="itemcategorydetails.php"><i class="fa fa-user"></i> View asset category</a></li>
                 <li><a href="create_assettype.php"><i class="fa fa-user"></i> Create Asset Type</a></li>
-                <li><a href="assettypedetails.php"><i class="fa fa-user"></i>View Asset Type</a></li>
-              </ul>
+                <li><a href="assettypedetails.php"><i class="fa fa-user"></i>View Asset Type</a></li></ul>
             </div>
 
           </div>
@@ -112,6 +118,54 @@ $last_name = $user_details['last_name'];
                   </li>
                 </ul>
               </li>
+              
+
+              <!--<li role="presentation" class="dropdown">
+                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                  <i class="fa fa-envelope-o"></i>
+                  <span class="badge bg-green">6</span>
+                </a>
+                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                  <li>
+                    <a>
+                      <span class="image">
+                                        <img src="images/img.jpg" alt="Profile Image" />
+                                    </span>
+                      <span>
+                                        <span>chathura</span>
+                      <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                                        add a asset to the system
+                                    </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span class="image">
+                                        <img src="images/img.jpg" alt="Profile Image" />
+                                    </span>
+                      <span>
+                                        <span>chathura</span>
+                      <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                                       add a asset to the system
+                                    </span>
+                    </a>
+                  </li>
+                 
+                  
+                  <li>
+                    <div class="text-center">
+                      <a>
+                        <strong>See All Alerts</strong>
+                        <i class="fa fa-angle-right"></i>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </li>-->
 
             </ul>
           </nav>
@@ -145,8 +199,8 @@ $last_name = $user_details['last_name'];
                             <th>Asset Type Id</th>
                             <th>Asset Type Name</th>
                             <th>Description</th>
-                            <th> </th>
-                            <th> </th>
+                            <th>Edit</th>
+                            <th>Delete</th>
                         
                         </tr>
                     </thead>
