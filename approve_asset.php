@@ -92,10 +92,22 @@ if ($user_details['user_level'] != "bursar"){
             <div class="menu_section">
            <!--   <h3>General</h3> -->
               <ul class="nav side-menu">
-			  
-            
-				<li><a href="assetclerk.php"><i class="fa fa-home"></i> Home </span></a></li>
-				<li><a href="addasset.php"><i class="fa fa-desktop"></i> Add Asset </span></a></li>
+
+
+                  <?php if (($user_details['user_level'] == 'asset_clerk')){
+                      echo '<li><a href="assetclerk.php"><i class="fa fa-home"></i> Home </span></a></li>';
+                  }
+                  else{
+                      if (($user_details['user_level'] == 'bursar')){
+                          echo '<li><a href="bursar.php"><i class="fa fa-home"></i> Home </span></a></li>';
+                      }
+                      else{
+                          echo '<li><a href="diviassetclerk.php"><i class="fa fa-home"></i> Home </span></a></li>';
+
+                      }
+                  }
+                  ?>
+
 				<li><a href="viewasset.php"><i class="fa fa-eye"></i> View Asset </span></a></li>
 				
 				

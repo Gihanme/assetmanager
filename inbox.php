@@ -97,7 +97,7 @@ if ($user_details['user_level'] != "system_admin"){
 
 
                     <br><br><br><br><br><br>    
-                    <li><a href="diviassetclerck.php"><i class="fa fa-home"></i> Home </span></a></li>
+                    <li><a href="diviassetclerk.php"><i class="fa fa-home"></i> Home </span></a></li>
                     <li><a href="compose.php"><i class="fa fa-building"></i> Create Message</span></a></li>
                      <li><a href="outbox.php"><i class="fa fa-building"></i>Outbox </span></a></li>
                      <li><a href="inbox.php"><i class="fa fa-building"></i>Inbox </span></a></li>

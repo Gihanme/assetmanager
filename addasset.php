@@ -246,10 +246,10 @@ $(function() {
                                 <li><a href="assetclerk.php"><i class="fa fa-home"></i> Home </span></a></li>
                                 <li><a href="addasset.php"><i class="fa fa-desktop"></i> Add Asset </span></a></li>
                                 <li><a href="viewasset.php"><i class="fa fa-eye"></i> View Asset </span></a></li>
-                                
+
                             </ul>
-                        </div>    
-                    </div>        
+                        </div>
+                    </div>
           <!-- /sidebar menu -->
           <!-- /menu footer buttons -->
                     <div class="sidebar-footer hidden-small">

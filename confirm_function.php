@@ -14,4 +14,5 @@ if (isset($_GET['id'])){
     $log->confirm_asset($asset_id);
     
 }
+
 header("Location:confirm_asset.php");

@@ -53,6 +53,12 @@ $division = $user_details['division'];
                     </button>
                     <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo" width="100" height="100"></a>
                 </div>
+
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="logout.php">Log Out</a></li>
+                    </ul>
+                </div>
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
@@ -122,10 +128,10 @@ $division = $user_details['division'];
 			
 					
 					<div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                                            <a href="verify_asset.php"><div class="feature-wrap">
+                                            <a href="confirm_asset.php"><div class="feature-wrap">
                             <i class="fa fa-check-square-o"></i>
-                            <h2>Verify Assets</h2>
-                            <h3>Accept new assets which are taken into the division </h3>
+                            <h2>Confirm Assets</h2>
+                            <h3>Confirm new assets which are taken into the division </h3>
                         </div>
 						</a>
                     </div>

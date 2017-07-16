@@ -133,10 +133,14 @@ $log->refresh_assets();
                                     echo '<li><a href="verify_asset.php"><i class="fa fa-check-square-o"></i> Verify Asset </span></a></li>';
                                 }?>
             <?php if (($user_details['user_level'] == 'bursar')){
-                                    echo '<li><a href="verify_asset.php"><i class="fa fa-check-square-o"></i> Verify Asset </span></a></li>';
+                                    echo '<li><a href="approve_asset.php"><i class="fa fa-check-square-o"></i> Verify Asset </span></a></li>';
                                 }?>
-				
-				
+
+                  <?php if (($user_details['user_level'] == 'asset_clerk')){
+                      echo '<li><a href="deniedAssets.php"><i class="fa fa-check-square-o"></i> Denied Assets </span></a></li>';
+                  }
+
+                  ?>
 				
                </ul>
             </div>
@@ -310,7 +314,7 @@ $log->refresh_assets();
                     <tbody>
 			
                 <?php
-                while ($array = $res->fetch_assoc()){	
+                while ($array = $res->fetch_assoc()){
                     $str = "";
                     if (($user_details['user_level'] != 'asset_clerk')){
                            $str = '<td><input type="checkbox" name="assets[]" class="check" id="assets[]" value="'.$array['Asset_ID'].'"></td>';

@@ -1,4 +1,4 @@
-<?php 
+ <?php
  include "function.php"; 
  if (!isset($_SESSION['user_details'])){     
      header("location:login.php");     
@@ -16,7 +16,7 @@ $level = $log->retrieve_user_level_name($user_details['user_level']);
 $first_name = $user_details['first_name'];
 $last_name = $user_details['last_name'];
 
-if ($user_details['user_level'] != "electrician"){
+if ($user_details['user_level'] != "div_asset_clerk"){
     header("location:login.php");
 }
 
@@ -91,9 +91,21 @@ if ($user_details['user_level'] != "electrician"){
             <div class="menu_section">
            <!--   <h3>General</h3> -->
               <ul class="nav side-menu">
-			  
-            
-				<li><a href="assetclerk.php"><i class="fa fa-home"></i> Home </span></a></li>
+
+
+                  <?php if (($user_details['user_level'] == 'asset_clerk')){
+                      echo '<li><a href="assetclerk.php"><i class="fa fa-home"></i> Home </span></a></li>';
+                  }
+                  else{
+                      if (($user_details['user_level'] == 'bursar')){
+                          echo '<li><a href="bursar.php"><i class="fa fa-home"></i> Home </span></a></li>';
+                      }
+                      else{
+                          echo '<li><a href="diviassetclerk.php"><i class="fa fa-home"></i> Home </span></a></li>';
+
+                      }
+                  }
+                  ?>
 				<li><a href="addasset.php"><i class="fa fa-desktop"></i> Add Asset </span></a></li>
 				<li><a href="viewasset.php"><i class="fa fa-eye"></i> View Asset </span></a></li>
 				
