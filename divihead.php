@@ -149,6 +149,7 @@
 
    
 
+<!--
     <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
@@ -163,7 +164,8 @@
                 </div>
             </div>
         </div>
-    </footer><!--/#footer-->
+    </footer>/#footer
+-->
 
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
