@@ -282,6 +282,7 @@ $log->refresh_assets();
               <div class="x_panel">
                 <div class="x_title">
                   <h2> View Assets </h2>
+<!--                    <input class="" id="system-search" name="q" placeholder="Search for" required="" style="margin-left:80%" >-->
                   <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
