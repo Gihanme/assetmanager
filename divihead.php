@@ -149,12 +149,11 @@
 
    
 
-<!--
     <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2016 UCSC All Rights Reserved.
+                    &copy; 2017 UCSC All Rights Reserved.
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
@@ -165,7 +164,6 @@
             </div>
         </div>
     </footer>/#footer
--->
 
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>

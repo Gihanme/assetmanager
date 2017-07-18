@@ -534,8 +534,9 @@ input.search-form:hover {
 }
 
 #feature {
+  hight:80%;
   background: #f2f2f2;
-  padding-bottom: 40px;
+  padding-bottom: 404px;
 }
 
 .features{
@@ -2500,10 +2501,12 @@ shortcodes page css
 }
 
 #footer {
+  margin-bottom: :0%;
   padding-top: 30px;
   padding-bottom: 30px;
   color: #fff;
   background: #2e2e2e;
+ 
 }
 
 #footer a {

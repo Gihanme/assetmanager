@@ -129,7 +129,7 @@ if ($user_details['user_level'] != "system_admin"){
                         <!--  <li>
                             <a href="javascript:;">Help</a>
                           </li> -->
-                        <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                        <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Clerk</a>
                         </li>
                     </ul>
                 </li>
