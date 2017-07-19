@@ -47,40 +47,6 @@ class FAssetClerk{
         //}
 
     }
-
-    function change_asset($array){
-        $id=$array['id'];
-        $name=$array['name'];
-        $type=$array['type'];
-        $category=$array['category'];
-        $model_no=$array['model'];
-        $brand=$array['brand'];
-        $serial=$array['serial'];
-
-        $date=$array['warranty'];
-
-        $purchase_array=explode('-',$array['warranty']);
-        $purchase_date=$purchase_array[0]."-".$purchase_array[1]."-".$purchase_array[2];
-        $warranty_date=$purchase_array[3]."-".$purchase_array[4]."-".$purchase_array[5];
-
-
-        $price=$array['price'];
-        $original_value=$array['price'];
-        $current_value=$array['price'];
-        $depreciation=$array['deprec'];
-        $vendor=$array['vendor'];
-        $vendor_address=$array['vendor_add'];
-        $current_division=$array['division'];
-        $current_room=$array['room'];
-        $barcode_no=$array['barcode'];
-
-
-
-        $que = "UPDATE asset SET Asset_Name='$name', Asset_type='$type', Asset_Category='$category', Model_No='$model_no', Brand='$brand', Serial_No='$serial', Purchase_Date='$purchase_date', Warranty_End='$warranty_date', Price='$price',Original_Value='$original_value', Current_Value='$current_value', Depreciation='$depreciation', Vendor='$vendor', Vendor_Address='$vendor_address',  Current_Division='$current_division', Current_Room='$current_room',Barcode_No='$barcode_no' WHERE Asset_ID='$id'";
-
-        $res = $this->db->dbh->query($que);
-        return $res;
-    }
     
 
     function approve_asset($asset_id, $approve, $user){
