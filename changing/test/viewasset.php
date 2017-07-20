@@ -64,6 +64,16 @@ $log->refresh_assets();
 
   <script src="js/jquery.min.js"></script>
 
+  <!--[if lt IE 9]>
+        <script src="../assets/js/ie8-responsive-file-warning.js"></script>
+        <![endif]-->
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
 </head>
 
 
@@ -100,9 +110,9 @@ $log->refresh_assets();
             <div class="menu_section">
            <!--   <h3>General</h3> -->
               <ul class="nav side-menu">
-        
+			  
             
-        <?php if (($user_details['user_level'] == 'asset_clerk')){
+				<?php if (($user_details['user_level'] == 'asset_clerk')){
                                     echo '<li><a href="assetclerk.php"><i class="fa fa-home"></i> Home </span></a></li>';
                                 }
                                     else{
@@ -115,10 +125,10 @@ $log->refresh_assets();
                                         }
                                         }
                                 ?>
-        <?php if (($user_details['user_level'] == 'asset_clerk')){
+				<?php if (($user_details['user_level'] == 'asset_clerk')){
                                     echo '<li><a href="addasset.php"><i class="fa fa-desktop"></i> Add Asset </span></a></li>';
                                 }?>
-        <li><a href="viewasset.php"><i class="fa fa-eye"></i> View Asset </span></a></li>
+				<li><a href="viewasset.php"><i class="fa fa-eye"></i> View Asset </span></a></li>
             <?php if (($user_details['user_level'] == 'div_asset_clerk')){
                                     echo '<li><a href="verify_asset.php"><i class="fa fa-check-square-o"></i> Verify Asset </span></a></li>';
                                 }?>
@@ -131,9 +141,7 @@ $log->refresh_assets();
                   }
 
                   ?>
-        
-        
-        
+				
                </ul>
             </div>
 
@@ -185,6 +193,53 @@ $log->refresh_assets();
                 </ul>
               </li>
 
+              <!--<li role="presentation" class="dropdown">
+                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                  <i class="fa fa-envelope-o"></i>
+                  <span class="badge bg-green">6</span>
+                </a>
+                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                  <li>
+                    <a>
+                      <span class="image">
+                                        <img src="images/img.jpg" alt="Profile Image" />
+                                    </span>
+                      <span>
+                                        <span>chathura</span>
+                      <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                                        add a asset to the sysytem
+                                    </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span class="image">
+                                        <img src="images/img.jpg" alt="Profile Image" />
+                                    </span>
+                      <span>
+                                        <span>chathura</span>
+                      <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                                       add a asset to the system
+                                    </span>
+                    </a>
+                  </li>
+                 
+                  
+                  <li>
+                    <div class="text-center">
+                      <a>
+                        <strong>See All Alerts</strong>
+                        <i class="fa fa-angle-right"></i>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </li>-->
+
             </ul>
           </nav>
         </div>
@@ -196,7 +251,28 @@ $log->refresh_assets();
       <div class="right_col" role="main">
         <div class="">
           <div class="page-title">
-      
+		  <!--
+            <div class="title_left">
+             <h3>
+                    Users
+                    <small>
+                        Some examples to get you started
+                    </small>
+                </h3>  
+            </div>
+
+            <div class="title_right">
+              <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search for...">
+                  <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Go!</button>
+                        </span>
+                </div>
+              </div>
+            </div>
+			-->
+			
           </div>
           <div class="clearfix"></div>
 
@@ -206,6 +282,7 @@ $log->refresh_assets();
               <div class="x_panel">
                 <div class="x_title">
                   <h2> View Assets </h2>
+<!--                    <input class="" id="system-search" name="q" placeholder="Search for" required="" style="margin-left:80%" >-->
                   <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -225,21 +302,20 @@ $log->refresh_assets();
                         }
                       ?>
                                         
-          <th align="style="justify"><strong >&nbsp;&nbsp;Asset Name </strong></th>
-          <th align="style="justify"><strong >&nbsp;&nbsp;Barcode No </strong></th>
-          <th align="style="justify"><strong >&nbsp;&nbsp;Serial No </strong></th>
-          <th align="style="justify"><strong >&nbsp;&nbsp;Asset code </strong></th>
-          <th align="style="justify"><strong >&nbsp;&nbsp;Division </strong></th>
-          <th align="style="justify"><strong >&nbsp;&nbsp;Room </strong></th>
-          <th align="style="justify"><strong >&nbsp;&nbsp;  </strong></th>
+					<th align="style="justify"><strong >&nbsp;&nbsp;Asset Name </strong></th>
+					<th align="style="justify"><strong >&nbsp;&nbsp;Barcode No </strong></th>
+					<th align="style="justify"><strong >&nbsp;&nbsp;Serial No </strong></th>
+					<th align="style="justify"><strong >&nbsp;&nbsp;Asset code </strong></th>
+					<th align="style="justify"><strong >&nbsp;&nbsp;Division </strong></th>
+					<th align="style="justify"><strong >&nbsp;&nbsp;Room </strong></th>
                       
                     </thead>
 
 
                     <tbody>
-      
+			
                 <?php
-                while ($array = $res->fetch_assoc()){ 
+                while ($array = $res->fetch_assoc()){
                     $str = "";
                     if (($user_details['user_level'] != 'asset_clerk')){
                            $str = '<td><input type="checkbox" name="assets[]" class="check" id="assets[]" value="'.$array['Asset_ID'].'"></td>';
@@ -253,10 +329,10 @@ $log->refresh_assets();
                         . '<td><label>'.$array['Current_Room'].'</label></td>'
                         . '<td><a href="asset_details.php?id='.$array['Asset_ID'].'">View</a></td>'
                         . '';
-                }   
-    ?>
-        
-        
+                }		
+		?>
+				
+				
             </tbody>
                   </table>
                         <script>
