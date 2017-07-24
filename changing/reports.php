@@ -40,11 +40,11 @@
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></spa<img src="images/logo.png" alt="logo" width="100" height="100">n>
+                        <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo" width="100" height="100"></a>
                 </div>
                 
                 <div class="collapse navbar-collapse navbar-right">
@@ -100,22 +100,7 @@
                         </div>
 						</a>
                     </div>
-    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                    <a href="asset_type_report.php"><div class="feature-wrap">
-                            <i class="fa fa-book"></i>
-                            <h2>Depriciation</h2>
-                            <h3>View despriation of assets</h3>
-                        </div>
-						</a>
-                    </div>
-	<div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                    <a href="revaluation_report.php"><div class="feature-wrap">
-                            <i class="fa fa-book"></i>
-                            <h2>Revaluation</h2>
-                            <h3>Generate report about assetes to be revaluate</h3>
-                        </div>
-						</a>
-                    </div>				
+					
 					<br><br><br><br><br><br><br><br><br><br><br><br>
                    
 					
