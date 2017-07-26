@@ -21,7 +21,7 @@
                 exit();
             }
             else{
-                if ($user_type== 'bursar_clerk'){
+                if ($user_type== 'bursar'){
                     header("Location:bursar.php");
                     exit();
                 }

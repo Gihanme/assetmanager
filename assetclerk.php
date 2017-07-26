@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php include 'function.php';
+$log = new FAssetClerk();
+$user_details = $_SESSION['user_details']; $level = $log->retrieve_user_level_name($user_details['user_level']);
+$first_name = $user_details['first_name'];
+$last_name = $user_details['last_name'];
+$division = $user_details['division'];
+?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -48,6 +55,14 @@
                 </div>
 
                 <div class="collapse navbar-collapse navbar-right">
+                <li class="">
+                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  <img src="images/img.jpg" class="img-circle profile_img" alt=""></br>
+                  <div class="profile_info">
+                    <h2><?php echo "$first_name $last_name";?></h2>               <span>(<?php echo "$level";?>)</span>
+                </div>
+                </a>
+              </li>
                     <ul class="nav navbar-nav">
                         <li><a href="logout.php">Log Out</a></li>
                     </ul>

@@ -624,7 +624,7 @@ class FAssetClerk{
    
    
    function retrieve_user_level_name($user_level){
-       $level_array = array('asset_clerk' => "Asset Clerk", 'dp_registrar'=>'Deputy Registrar', 'div_asset_clerk' => "Divisional Asset Clerk", "bursar" => "Bursar", "system_admin" => "System Administrator", "temp_user" => "Temporary User");
+       $level_array = array('asset_clerk' => "Asset Clerk", 'dp_registrar'=>'Deputy Registrar', 'div_asset_clerk' => "Divisional Asset Clerk", "bursar" => "Bursar Clerk", "system_admin" => "System Administrator", "temp_user" => "Temporary User");
        $level = $level_array[$user_level];
        return $level;
    }
