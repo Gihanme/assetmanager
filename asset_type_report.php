@@ -107,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                   <li><a href="<?php if ($user_details['user_level'] === "div_asset_clerk"){echo 'diviassetclerk.php';}
                   else{if ($user_details['user_level'] === "bursar"){echo 'bursar.php';}
                   else{echo 'assetclerk.php';}}?>"><i class="fa fa-home"></i> Home </span></a></li>
-                  <li><a href="asset_type_report.php"><i class="fa fa-exchange"></i> Asset Movement </span></a></li>
+                  <li><a href="asset_movement_report.php"><i class="fa fa-exchange"></i> Asset Movement </span></a></li>
                   <li><a href="asset_type_report.php"><i class="fa fa-bars"></i> Asset Types </span></a></li>
 
                   <?php if (($user_details['user_level'] == 'div_asset_clerk')){

@@ -101,7 +101,7 @@ $division = $user_details['division'];
 
                     <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <a href="deniedAssets.php"><div class="feature-wrap">
-                                <i class="fa fa-envelope-o"></i>
+                                <i class="fa fa-check-square-o"></i>
                                 <h2>Denied Assets</h2>
                                 <h3>view denied assets</h3>
                             </div>

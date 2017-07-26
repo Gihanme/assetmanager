@@ -350,9 +350,10 @@ function test_input($data){
                                     ?>
                                 </select><br>
                             </td> 
+                            
 
-                            <!--         ****remove barcode*****                    <td align="style="justify"><strong >&nbsp;&nbsp;Barcode No </strong></td>
-                            <td><input type="text" class="form-control" value="" name="barcode"/><span class="error"><?php echo $barcodeErr;?></span><br><br></td>--> 
+                            <td align="style="justify"><strong >&nbsp;&nbsp;Barcode No </strong></td>
+                            <td><input type="text" class="form-control" value="" name="barcode"/><span class="error"><?php echo $barcodeErr;?></span><br><br></td>
                         </tr>
                         <tr>
                     <td align="style="justify"><strong >&nbsp;&nbsp;Division</strong></td>
