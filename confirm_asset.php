@@ -106,8 +106,9 @@ if ($user_details['user_level'] != "div_asset_clerk"){
                       }
                   }
                   ?>
-				<li><a href="addasset.php"><i class="fa fa-desktop"></i> Add Asset </span></a></li>
+				
 				<li><a href="viewasset.php"><i class="fa fa-eye"></i> View Asset </span></a></li>
+        <li><a href="confirm_asset.php"><i class="fa fa-check-square-o"></i> Confirm Asset </span></a></li>
 				
 				
 				
@@ -182,7 +183,7 @@ if ($user_details['user_level'] != "div_asset_clerk"){
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2> View Assets </h2>
+                  <h2> Confirm Assets </h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -218,13 +219,13 @@ if ($user_details['user_level'] != "div_asset_clerk"){
 			
                 <?php
                 while ($array = $res->fetch_assoc()){	
-                echo '<tr><td><input type="text" class="form-control" value="'.$array['Asset_Name'].'"/></td>'
-                . '<td><input type="text" class="form-control" value="'.$array['Barcode_No'].'"/></td>'
-                        . '<td><input type="text" class="form-control" value="'.$array['Serial_No'].'"/></td>'
-                        . '<td><input type="text" class="form-control" value="'.$array['Asset_Code'].'"/></td>'
-                        . '<td><input type="text" class="form-control" value="'.$array['Current_Division'].'"/></td>'
-                        . '<td><input type="text" class="form-control" value="'.$array['Current_Room'].'"/></td>'
-                        . '<td><button type="btn btn-primary" name="approve_asset" onclick="window.location.href=\'confirm_function.php?id='.$array['Asset_ID'].'\'">Confirm</button>
+                echo '<tr><td><input disabled type="text" class="form-control" value="'.$array['Asset_Name'].'"/></td>'
+                . '<td><input  disabled type="text" class="form-control" value="'.$array['Barcode_No'].'"/></td>'
+                        . '<td><input disabled type="text" class="form-control" value="'.$array['Serial_No'].'"/></td>'
+                        . '<td><input disabled type="text" class="form-control" value="'.$array['Asset_Code'].'"/></td>'
+                        . '<td><input disabled type="text" class="form-control" value="'.$array['Current_Division'].'"/></td>'
+                        . '<td><input disabled type="text" class="form-control" value="'.$array['Current_Room'].'"/></td>'
+                        . '<td><button  type="btn btn-primary" name="approve_asset" onclick="window.location.href=\'confirm_function.php?id='.$array['Asset_ID'].'\'">Confirm</button>
                         <button type="btn btn-primary" name="approve_asset" onclick="deny(' . $array['Asset_ID'] . ')">Deny</button></td></tr>';
                        
                 }		

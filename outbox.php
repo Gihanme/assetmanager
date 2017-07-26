@@ -106,9 +106,9 @@ if ($user_details['user_level'] != "system_admin"){
                 <ul class="nav side-menu">
                     <br><br><br><br><br><br>
                     <li><a href="diviassetclerk.php"><i class="fa fa-home"></i> Home </span></a></li>
-                    <li><a href="compose.php"><i class="fa fa-building"></i> Create Message</span></a></li>
+                    <li><a href="compose.php"><i class="fa fa-pencil-square-o"></i> Create Message</span></a></li>
                     <li><a href="outbox.php"><i class="fa fa-building"></i>Outbox </span></a></li>
-                    <li><a href="inbox.php"><i class="fa fa-building"></i>Inbox </span></a></li>
+                    <li><a href="inbox.php"><i class="fa fa-inbox"></i>Inbox </span></a></li>
 
                 </ul>
             </div>

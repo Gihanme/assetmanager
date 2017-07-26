@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php include 'function.php';
+$log = new FAssetClerk();
+$user_details = $_SESSION['user_details']; $level = $log->retrieve_user_level_name($user_details['user_level']);
+$first_name = $user_details['first_name'];
+$last_name = $user_details['last_name'];
+$division = $user_details['division'];
+?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -28,7 +35,7 @@
 
 <body>
 
-<header id="header">
+    <header id="header">
         <div class="top-bar">
             <div class="container">
              
@@ -40,30 +47,24 @@
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></spa<img src="images/logo.png" alt="logo" width="100" height="100">n>
+                        <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"></a>
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo" style="width: 100px;"></a>
                 </div>
-                
+
                 <div class="collapse navbar-collapse navbar-right">
+                <li class="">
+                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  <img src="images/img.jpg" class="img-circle profile_img" alt=""></br>
+                  <div class="profile_info">
+                    <h2><?php echo "$first_name $last_name";?></h2>               <span>(<?php echo "$level";?>)</span>
+                </div>
+                </a>
+              </li>
                     <ul class="nav navbar-nav">
-                        <!---<li><a href="index.php">Home</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
-                       <!-- <li class="active"><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="blog-item.html">Blog Single</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="404.html">404</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="blog.html">Blog</a></li> 
-                        <li><a href="contact-us.html">Contact</a></li>   -->                     
+                        <li><a href="logout.php">Log Out</a></li>
                     </ul>
                 </div>
             </div><!--/.container-->
@@ -73,55 +74,44 @@
 
     <section id="feature" class="transparent-bg">
         <div class="container">
-           <!-- <div class="center wow fadeInDown">
-               <h2>University Of Colombo School Of Computing</h2>
-                <p class="lead">Asset Management System</p> 
-            </div>-->
-
-            <div class="row">
+           </br>
+             <div class="row">
                 <div class="features">
                     <!--/.col-md-4-->
-					
-		       
-					
-		<div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    
+               
+                    
+        <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                     <a href="asset_movement_report.php"><div class="feature-wrap">
-                            <i class="fa fa-book"></i>
+                            <i class="fa fa-exchange"></i>
                             <h2>Asset Movement</h2>
                             <h3>View how assets have moved in and out of division</h3>
                         </div>
-						</a>
-                    </div>	
-	<div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        </a>
+                    </div>  
+    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                     <a href="asset_type_report.php"><div class="feature-wrap">
-                            <i class="fa fa-book"></i>
+                            <i class="fa fa-bars"></i>
                             <h2>Asset Types</h2>
                             <h3>View what type of assets are available</h3>
                         </div>
-						</a>
+                        </a>
                     </div>
     <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                    <a href="asset_type_report.php"><div class="feature-wrap">
-                            <i class="fa fa-book"></i>
-                            <h2>Depriciation</h2>
-                            <h3>View despriation of assets</h3>
-                        </div>
-						</a>
-                    </div>
-	<div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                    <a href="revaluation_report.php"><div class="feature-wrap">
+                    <a href="reevaluate.php"><div class="feature-wrap">
                             <i class="fa fa-book"></i>
                             <h2>Revaluation</h2>
                             <h3>Generate report about assetes to be revaluate</h3>
                         </div>
-						</a>
-                    </div>				
-					<br><br><br><br><br><br><br><br><br><br><br><br>
+                        </a>
+                    </div>              
+                    <br><br><br><br><br><br><br><br><br><br><br><br>
                    
-					
-					
+                    
+                    
                 </div><!--/.services-->
             </div><!--/.row--> 
+
 
 
                    
@@ -140,7 +130,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li></li>                        
+                                             
                     </ul>
                 </div>
             </div>

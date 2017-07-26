@@ -163,64 +163,39 @@ function test_input($data){
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Include Required Prerequisites -->
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/latest/css/bootstrap.css" />
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>  
-	  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>  
-	  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
-	  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>
 
   <title>AMS</title>
+
   <!-- Bootstrap core CSS -->
+
   <link href="css/bootstrap.min.css" rel="stylesheet">
+
   <link href="fonts/css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/animate.min.css" rel="styleshewt">
+  <link href="css/animate.min.css" rel="stylesheet">
+
   <!-- Custom styling plus plugins -->
   <link href="css/custom.css" rel="stylesheet">
   <link href="css/icheck/flat/green.css" rel="stylesheet">
-  <link href="js/dxatatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="js/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+  <link href="css/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+
   <script src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 
-<!-- Include Date Range Picker -->
-<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+  <!--[if lt IE 9]>
+        <script src="../assets/js/ie8-responsive-file-warning.js"></script>
+        <![endif]-->
 
-<script type="text/javascript">
-$(function() {
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
-  $('input[name="datefilter"]').daterangepicker({
-      autoUpdateInput: false,
-      locale: {
-          cancelLabel: 'Clear'
-      }
-  });
-
-  $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-      $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-      var startDate=$startDate.val();
-      document.getElementById('demo').innerHTML='<p>'+startDate+'</p>';
-      
-  });
-
-  $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
-      $(this).val('');
-  });
-
-});
-</script>
-
-  
 </head>
-
 
 <body class="nav-md">
     <div class="container body">
@@ -292,50 +267,7 @@ $(function() {
                             </li>
                           </ul>
                         </li>
-                    <!--<li role="presentation" class="dropdown">
-                      <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                        <i class="fa fa-envelope-o"></i>
-                        <span class="badge bg-green">6</span>
-                      </a>
-                      <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                            <li>
-                                <a>
-                                  <span class="image">
-                                      <img src="images/img.jpg" alt="Profile Image" />
-                                  </span>
-                                  <span>
-                                      <span>chathura</span>
-                                      <span class="time">3 mins ago</span>
-                                  </span>
-                                  <span class="message">
-                                      add a asset to the sysytem
-                                  </span>
-                                </a>
-                            </li>   
-                            <li>
-                                <a>
-                                    <span class="image">
-                                        <img src="images/img.jpg" alt="Profile Image" />
-                                    </span>
-                                    <span>
-                                        <span>chathura</span>
-                                        <span class="time">3 mins ago</span>
-                                    </span>
-                                    <span class="message">
-                                        add a asset to the system
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <div class="text-center">
-                                    <a>
-                                      <strong>See All Alerts</strong>
-                                      <i class="fa fa-angle-right"></i>
-                                    </a>
-                                </div>
-                            </li>
-                      </ul>
-                    </li>-->
+                    
                     </ul>
                 </nav>
               </div>
@@ -390,11 +322,9 @@ $(function() {
                     <table id="datatable" class="table table-striped table-bordered">
                     <thead>                      
                     </thead>
-                    <tbody>
+                              <tbody>
                         <tr>
-                            <td align="style="justify><strong >&nbsp;&nbsp;Asset name </strong></td>
-                            <td><input type="text" class="form-control" value="" name="name" id="name"><span class="error"> <?php echo $itemNameErr;?></span>
-  <br><br></td>
+                            
                             <td align="style="justify"><strong >&nbsp;&nbsp;Asset Type </strong></td>
                             <td>
                                 <select class="form-control" name="type">
@@ -402,12 +332,14 @@ $(function() {
                                         while($div = $types->fetch_assoc()){
                                             echo "<option value='".$div['asset_type_id']."'>".$div['asset_type']."</option>";
                                         }?>
-                                </select>
-                            </td>   
-                        </tr>	
+                                </select><br><br>
+                            </td> 
+                            <td align="style="justify><strong >&nbsp;&nbsp;Asset name </strong></td>
+                            <td><input type="text" class="form-control" value="" name="name" id="name"><span class="error"> <?php echo $itemNameErr;?></span><br>
+                            </td>  
+                        </tr> 
                         <tr>
-                            <td align="style="><strong >&nbsp;&nbsp;Model Number </strong></td>
-                            <td><input type="text" class="form-control" value="" name="model"/><span class="error"><?php echo $modelNoErr;?></span><br><br></td>
+                           
                             <td align="style="><strong >&nbsp;&nbsp;Item Category </strong></td>
                             <td>
                                 <select class="form-control" name="category">
@@ -416,38 +348,20 @@ $(function() {
                                             echo "<option value='".$cate['asset_category_id']."'>".$cate['asset_category']."</option>";
                                     }
                                     ?>
-                                </select>
-                            </td>  
-                        </tr>
-                        <tr>
-                            <td align="style="justify"><strong >&nbsp;&nbsp;Barcode No </strong></td>
-                            <td><input type="text" class="form-control" value="" name="barcode"/><span class="error"><?php echo $barcodeErr;?></span><br><br></td>
-                            <td align="style="justify"><strong >&nbsp;&nbsp; Cost </strong></td>
-                            <td><input type="text" class="form-control" value="" name="price"/><span class="error"><?php echo $costErr;?></span><br><br></td>      
-                        <tr>
-                            <td align="style="justify"><strong >&nbsp;&nbsp;Serial No </strong></td>
-                            <td><input type="text" class="form-control" value="" name="serial"/></td>
-                            <td align="style="justify"><strong >&nbsp;&nbsp;Brand </strong></td>
-                            <td><input type="text" class="form-control" value="" name="brand"/><span class="error"><?php echo $brandErr;?></span><br><br></td>   
-                        </tr>
-				
-				<tr>
-                    <td align="style="justify"><strong >&nbsp;&nbsp;Vendor </strong></td>
-                    <td><input type="text" class="form-control" value="" name="vendor"/><span class="error"><?php echo $vendorErr;?></span><br><br></td>
-                    
-                    <td align="style="justify"><strong >&nbsp;&nbsp;Vendor Address</strong></td>
-                    <td><input type="text" class="form-control" value="" name="vendor_add"/><span class="error"><?php echo $vendorAddErr;?></span><br><br></td>
+                                </select><br>
+                            </td> 
 
-                </tr>
-				
-				<tr>
+                            <!--         ****remove barcode*****                    <td align="style="justify"><strong >&nbsp;&nbsp;Barcode No </strong></td>
+                            <td><input type="text" class="form-control" value="" name="barcode"/><span class="error"><?php echo $barcodeErr;?></span><br><br></td>--> 
+                        </tr>
+                        <tr>
                     <td align="style="justify"><strong >&nbsp;&nbsp;Division</strong></td>
                     <td><select class="form-control" name="division"   onchange="fetch_select(this.value);">
                             <?php 
                                 while($div = $divisions->fetch_assoc()){
                                     echo "<option value='".$div['Division_Code']."'>".$div['Division_Name']."</option>";
                                 }?>
-                        </select></td> 
+                        </select><br></td> 
                     
                     <td align="style="justify"><strong >&nbsp;&nbsp;Room</strong></td>
                     <td><select class="form-control" name="room"   onchange="fetch_select(this.value);">
@@ -455,26 +369,59 @@ $(function() {
                                 while($rom = $rooms->fetch_assoc()){
                                     echo "<option value='".$rom['Room_code']."'>".$rom['Room_name']."</option>";
                                 }?>
-                        </select></td>  
-                </tr>				
-				<tr>
+                        </select><br></td>  
+                </tr>
+
+                 <tr>
+                            <td align="style="justify"><strong >&nbsp;&nbsp;Serial No </strong></td>
+                            <td><input type="text" class="form-control" value="" name="serial"/><br>
+                            </td>
+                             <td align="style="><strong >&nbsp;&nbsp;Model Number </strong></td>
+                            <td><input type="text" class="form-control" value="" name="model"/><span class="error"><?php echo $modelNoErr;?></span><br></td>
+                               
+                        </tr>
+
+                        <tr>
+                            
+                            <td align="style="justify"><strong >&nbsp;&nbsp;Brand </strong></td>
+                            <td><input type="text" class="form-control" value="" name="brand"/><span class="error"><?php echo $brandErr;?></span><br></td>
+                            <td align="style="justify"><strong >&nbsp;&nbsp; Cost </strong></td>
+                            <td><input type="text" class="form-control" value="" name="price"/><span class="error"><?php echo $costErr;?></span><br></td>  
+                  </tr>    
+                       
+                        
+        
+        <tr>
+                    <td align="style="justify"><strong >&nbsp;&nbsp;Vendor </strong></td>
+                    <td><input type="text" class="form-control" value="" name="vendor"/><span class="error"><?php echo $vendorErr;?></span><br></td>
+                    
+                    <td align="style="justify"><strong >&nbsp;&nbsp;Vendor Address</strong></td>
+                    <td><input type="text" class="form-control" value="" name="vendor_add"/><span class="error"><?php echo $vendorAddErr;?></span><br></td>
+
+                </tr>
+
+
+        
+               
+        <tr>
                     
                     <td align="style="justify"><strong >&nbsp;&nbsp;Depreciation </strong></td>
-                    <td><input type="text" class="form-control" value="" name="deprec"/></td>
-		                                
-                    <td align="style=justify"><strong >&nbsp;&nbsp;Warranty Period  </strong></td>
+                    <td><input type="text" class="form-control" value="" name="deprec"/><br></td>
+                                    
+                    <td align="style=justify"><strong >&nbsp;&nbsp;Warranty Period  </strong><br></td>
                     <td>          
                 
             <input type="text" name="datefilter" value="" class="form-control" required/>
-        								
+                        
                 
-				</tr>
+        </tr>
+        <!--   Image uploading
         <tr>
                     <td align="style=justify"><strong >&nbsp;&nbsp;Select File</strong  ></td>
                     <td><input type="file" name="image" > </td> 
                     
                        
-                </tr> 
+                </tr> -->
             </tbody>
     </table>
                                                                             

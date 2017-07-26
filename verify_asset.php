@@ -99,7 +99,7 @@ $res = $log->retrieve_new_assets($division);
                                 }?>
 				<li><a href="viewasset.php"><i class="fa fa-eye"></i> View Asset </span></a></li>
                                 <?php if (($user_details['user_level'] == 'div_asset_clerk') or ($user_details['user_level'] == 'asset_clerk')){
-                                    echo '<li><a href="verify_asset.php"><i class="fa fa-eye"></i> Verify Asset </span></a></li>';
+                                    echo '<li><a href="verify_asset.php"><i class="fa fa-check-square-o"></i> Verify Asset </span></a></li>';
                                 }?>
 				
 				

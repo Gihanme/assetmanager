@@ -110,7 +110,9 @@ $log->refresh_assets();
                                             echo '<li><a href="bursar.php"><i class="fa fa-home"></i> Home </span></a></li>';
                                         }
                                         else{
-                                        echo '<li><a href="diviassetclerk.php"><i class="fa fa-home"></i> Home </span></a></li>'; 
+                                          if (($user_details['user_level'] == 'dp_registrar')){
+                                            echo '<li><a href="dp_registrar.php"><i class="fa fa-home"></i> Home </span></a></li>';}
+                                        else{echo '<li><a href="diviassetclerk.php"><i class="fa fa-home"></i> Home </span></a></li>'; }
                                     
                                         }
                                         }

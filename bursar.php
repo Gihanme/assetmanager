@@ -74,7 +74,7 @@ $division = $user_details['division'];
 
     <section id="feature" class="transparent-bg">
         <div class="container">
-           
+           </br>
             <div class="row">
                 <div class="features">
                     <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
