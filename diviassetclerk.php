@@ -55,7 +55,16 @@ $division = $user_details['division'];
                 </div>
 
                 <div class="collapse navbar-collapse navbar-right">
+                <li class="">
+                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  <img src="images/img.jpg" class="img-circle profile_img" alt=""></br>
+                  <div class="profile_info">
+                    <h2><?php echo "$first_name $last_name";?></h2>               <span>(<?php echo "$level";?>)</span>
+                </div>
+                </a>
+              </li>
                     <ul class="nav navbar-nav">
+
                         <li><a href="logout.php">Log Out</a></li>
                     </ul>
                 </div>

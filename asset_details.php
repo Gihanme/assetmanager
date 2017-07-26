@@ -239,6 +239,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
                             <tbody>
+                            <?php  if($asset_data['Image']){?>
                             <tr>
                                 <td colspan="4" >
                                     <center><img src="<?php echo $asset_data['Image']?>" style="height:250px;width:auto;" /></center>
@@ -246,6 +247,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                 </td>
 
                             </tr>
+                            <?php } ?>
                             <form action="changeData.php" method="post">
                                 <tr>
                                     <input hidden name="id" value="<?php echo $asset_data['Asset_ID']?>" >
