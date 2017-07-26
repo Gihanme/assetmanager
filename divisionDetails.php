@@ -83,16 +83,11 @@ if ($user_details['user_level'] != "system_admin"){
             <div class="menu_section">
            <!--   <h3>General</h3> -->
               <ul class="nav side-menu">
+              <li><a href="sysadmin.php"><i class="fa fa-home"></i>  Home </span></a></li>  
 		<li><a href="createDivision.php"><i class="fa fa-building"></i> Create Division </span></a></li>
-                <li><a href="divisionDetails.php"><i class="fa fa-building"></i> View Divisions </span></a></li>
-                <li><a href="createRoom.php"><i class="fa fa-building"></i> Create Room </span></a></li>
-                <li><a href="roomdetails.php"><i class="fa fa-building"></i> View Rooms </span></a></li>		
-                <li><a href="createuser.php"><i class="fa fa-user"></i> Create User </span></a></li>
-                <li><a href="userDetails.php"><i class="fa fa-user"></i> View Users </span></a></li>
-                <li><a href="create_itemcategory.php"><i class="fa fa-user"></i> Create asset category</a></li>
-                <li><a href="itemcategorydetails.php"><i class="fa fa-user"></i> View asset category</a></li>
-                <li><a href="create_assettype.php"><i class="fa fa-user"></i> Create Asset Type</a></li>
-                <li><a href="assettypedetails.php"><i class="fa fa-user"></i>View Asset Type</a></li>
+                <li><a href="divisionDetails.php"><i class="fa fa-building-o"></i> View Divisions </span></a></li>
+                
+                
                </ul>
             </div>
 

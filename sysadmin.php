@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php include 'function.php';
+$log = new FAssetClerk();
+$user_details = $_SESSION['user_details']; $level = $log->retrieve_user_level_name($user_details['user_level']);
+$first_name = $user_details['first_name'];
+$last_name = $user_details['last_name'];
+$division = $user_details['division'];
+?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -28,28 +35,13 @@
 
 <body>
 
-    <header id="header">
+<header id="header">
         <div class="top-bar">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-xs-4">
-                        
-                    </div>
-                    <div class="col-sm-6 col-xs-8">
-                       <div class="social">
-                            
-                            <div class="search">
-                                <form role="form">
-                                    <input type="text" class="search-form" autocomplete="off" placeholder="Search">
-                                    <i class="fa fa-search"></i>
-                                </form>
-                           </div>
-                       </div>
-                    </div>
-                </div>
+             
             </div><!--/.container-->
         </div><!--/.top-bar-->
-
+        
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -59,27 +51,26 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo.png " alt="logo" style="width: 100px;"></a>
+                </div>
+
+                <div class="collapse navbar-collapse navbar-right">
+                    <li class="">
+                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  <img src="images/img.jpg" class="img-circle profile_img" alt=""></br>
+                  <div class="profile_info">
+                    <h2><?php echo "$first_name $last_name";?></h2>               <span>(<?php echo "$level";?>)</span>
+                </div>
+                </a>
+              </li>
+
+                    <ul class="nav navbar-nav">
+                        <li><a href="logout.php">Log Out</a></li>
+                    </ul>
                 </div>
                 
-                <div class="collapse navbar-collapse navbar-right">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
-                       <!-- <li class="active"><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="blog-item.html">Blog Single</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="404.html">404</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="blog.html">Blog</a></li> 
-                        <li><a href="contact-us.html">Contact</a></li>   -->                     
-                    </ul>
+                       
+                       </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
@@ -95,39 +86,74 @@
 
             <div class="row">
                 <div class="features">
+                    
+                    
                     <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <a href="division.php"><div class="feature-wrap">
-                            <i class="fa fa-desktop"></i>
-                            <h2>Manage Departments</h2>
-                            <h3>Add, view, update and delete divisions of University</h3>
+                        <a href="divisionDetails.php"><div class="feature-wrap">
+                            <i class="fa fa-building-o fa-fw"></i>
+                            <h2>Manage Divisions</h2>
+                            <h3>Add, view update and delete the divisions </h3>
                         </div>
-                         </a>
+                        </a>
                     </div><!--/.col-md-4-->
-					
-					<div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <a href="room.php"><div class="feature-wrap">
-                            <i class="fa fa-eye"></i>
-                            <h2>Managing Rooms</h2>
-                            <h3>Add, view, update and delete rooms</h3>
+                
+                    
+                                    
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <a href="roomdetails.php"><div class="feature-wrap">
+                            <i class="fa fa-square"></i>
+                            <h2>Manage Rooms</h2>
+                            <h3>Add, view update and delete the rooms</h3>
                         </div>
-						</a>
+                        </a>
                     </div><!--/.col-md-4-->
-					
-					<div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+            
+                    
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                                             <a href="userDetails.php"><div class="feature-wrap">
-                            <i class="fa fa-eye"></i>
+                            <i class="fa fa-user"></i>
                             <h2>Manage Users</h2>
-                            <h3>Add, view, update and remove users</h3>
+                            <h3>Add, view update and delete the users </h3>
                         </div>
-						</a>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                                            <a href="itemcategorydetails.php"><div class="feature-wrap">
+                            <i class="fa fa-tasks"></i>
+                            <h2>Manage Asset Category</h2>
+                            <h3>Add, view update and delete the asset category</h3>
+                        </div>
+                        </a>
+                    </div><!--/.col-md-4--><div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                                            <a href="assettypedetails.php"><div class="feature-wrap">
+                            <i class="fa fa-bars"></i>
+                            <h2>Manage Asset Types</h2>
+                            <h3>Add, view update and delete the Asset Types</h3>
+                        </div>
+                        </a>
                     </div><!--/.col-md-4-->
-					
-					
-					
-					<br><br><br><br><br><br><br><br><br><br><br><br>
+                
+                    
+                    
+                        </a>
+                    </div><!--/.col-md-4-->
+                
+                    
+                    
+                    
+                <!--    <div class="col-md-4S col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                                            <a href="viewasset.php"><div class="feature-wrap">
+                            <i class="fa fa-exchange"></i>
+                            <h2>Transfer sset</h2>
+                            <h3>Transfer the assets from  department to another.</h3>
+                        </div>
+                        </a>
+                    </div><!--/.col-md-4-->
+                    
+                    <br><br><br><br><br><br><br><br><br><br><br><br>
                    
-					
-					
+                    
+                    
                 </div><!--/.services-->
             </div><!--/.row--> 
 
@@ -144,14 +170,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2017 UCSC All Rights Reserved.
+                    &copy; 2016 UCSC All Rights Reserved.
                 </div>
-                <div class="col-sm-6">
-                    <ul class="pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>                        
-                    </ul>
-                </div>
+                
             </div>
         </div>
     </footer><!--/#footer-->

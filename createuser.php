@@ -91,16 +91,9 @@ if ($user_details['user_level'] != "system_admin"){
             <div class="menu_section">
            <!--   <h3>General</h3> -->
              <ul class="nav side-menu">
-		<li><a href="createDivision.php"><i class="fa fa-building"></i> Create Division </span></a></li>
-                <li><a href="divisionDetails.php"><i class="fa fa-building"></i> View Divisions </span></a></li>
-                <li><a href="createRoom.php"><i class="fa fa-building"></i> Create Room </span></a></li>
-                <li><a href="roomdetails.php"><i class="fa fa-building"></i> View Rooms </span></a></li>		
-                <li><a href="createuser.php"><i class="fa fa-user"></i> Create User </span></a></li>
+		<li><a href="sysadmin.php"><i class="fa fa-home"></i>  Home </span></a></li>    
+                <li><a href="createuser.php"><i class="fa fa-user-plus"></i> Create User </span></a></li>
                 <li><a href="userDetails.php"><i class="fa fa-user"></i> View Users </span></a></li>
-                <li><a href="create_itemcategory.php"><i class="fa fa-user"></i> Create asset category</a></li>
-                <li><a href="itemcategorydetails.php"><i class="fa fa-user"></i> View asset category</a></li>
-                <li><a href="create_assettype.php"><i class="fa fa-user"></i> Create Asset Type</a></li>
-                <li><a href="assettypedetails.php"><i class="fa fa-user"></i>View Asset Type</a></li>
                </ul>
             </div>
 
@@ -138,52 +131,6 @@ if ($user_details['user_level'] != "system_admin"){
               </li>
               
 
-              <!--<li role="presentation" class="dropdown">
-                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                  <i class="fa fa-envelope-o"></i>
-                  <span class="badge bg-green">6</span>
-                </a>
-                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                  <li>
-                    <a>
-                      <span class="image">
-                                        <img src="images/img.jpg" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>chathura</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        add a asset to the sysytem
-                                    </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a>
-                      <span class="image">
-                                        <img src="images/img.jpg" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>chathura</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                       add a asset to the system
-                                    </span>
-                    </a>
-                  </li>
-                 
-                  
-                  <li>
-                    <div class="text-center">
-                      <a>
-                        <strong>See All Alerts</strong>
-                        <i class="fa fa-angle-right"></i>
-                      </a>
-                    </div>
-                  </li>
-                </ul>
-              </li>-->
 
             </ul>
           </nav>
@@ -196,27 +143,7 @@ if ($user_details['user_level'] != "system_admin"){
       <div class="right_col" role="main">
         <div class="">
           <div class="page-title">
-		  <!--
-            <div class="title_left">
-             <h3>
-                    Users
-                    <small>
-                        Some examples to get you started
-                    </small>
-                </h3>  
-            </div>
-
-            <div class="title_right">
-              <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search for...">
-                  <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Go!</button>
-                        </span>
-                </div>
-              </div>
-            </div>
-			-->
+		  
 			
           </div>
             <form name="createUser" method="post" action="insertUser.php">
@@ -316,7 +243,7 @@ if ($user_details['user_level'] != "system_admin"){
                     <td><input type="text pattern="[a-zA-Z]+" title="Enter a valid name"  name="last_name" class="form-control" value="" required/></td>
                             
                 </tr>
-				 q
+				 
 <!--				<tr>-->
 <!--                    <td align="style=justify"><strong >&nbsp;&nbsp;Date of birth</strong></td>-->
 <!--                    <td>-->
