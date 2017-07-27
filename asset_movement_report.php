@@ -113,9 +113,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
                   <li><a href="asset_type_report.php"><i class="fa fa-exchange"></i> Asset Movement </span></a></li>
                   <li><a href="asset_type_report.php"><i class="fa fa-bars"></i> Asset Types </span></a></li>
 
-                  <?php if (($user_details['user_level'] == 'div_asset_clerk')){
+                  <!--?php if (($user_details['user_level'] == 'div_asset_clerk')){
                                     echo '<li><a href="revaluation_report.php"><i class="fa fa-book"></i> Revaluation </span></a></li>';
-                                }?>
+                                }?-->
 				
 				
 				

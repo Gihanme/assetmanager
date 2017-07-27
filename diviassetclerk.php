@@ -36,7 +36,7 @@ $division = $user_details['division'];
 <body>
 
 <header id="header">
-        <div class="top-bar" style="padding-top: 0px;">
+        <div class="top-bar" style="padding-top: 5px;">
             <div class="container">
              
             </div><!--/.container-->
@@ -64,7 +64,7 @@ $division = $user_details['division'];
                 </a>
               </li>
 
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav" style="padding-left: 30px;">
                         <li><a href="logout.php"  class="btn btn-success btn-md" style="padding-top: 3px; padding-bottom: 3px;">Log Out</a></li>
                     </ul>
                 </div>
@@ -96,7 +96,7 @@ $division = $user_details['division'];
         
     </header><!--/header-->
 
-    <section id="feature" class="transparent-bg" style="padding-bottom: 85px;">
+    <section id="feature" class="transparent-bg" style="padding-bottom: 132px; padding-top: 80px;">
         <div class="container">
            <!-- <div class="center wow fadeInDown">
                <h2>University Of Colombo School Of Computing</h2>
@@ -136,8 +136,10 @@ $division = $user_details['division'];
                         </div>
                         </a>
                     </div>
+
+                    </br></br>
                     <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                                            <a href="inbox.php"><div class="feature-wrap">
+                                            <a href="inbox.php"><div class="feature-wrap" style="padding-top: 10px;">
                             <i class="fa fa-envelope-o"></i>
                             <h2>Check Inbox</h2>
                             <h3>Send messages to another division</h3>

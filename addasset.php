@@ -254,7 +254,7 @@ function test_input($data){
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
                           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            <img src="images/img.jpg" alt=""><?php echo "$first_name $last_name";?>
+                            <!--img src="images/img.jpg" alt=""--><?php echo "$first_name $last_name";?>
                             <span class=" fa fa-angle-down"></span>
                           </a>
                           <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -455,7 +455,7 @@ function test_input($data){
         Submitasda
     </button>
 -->
-            <input type="submit"/>
+            <input class="btn btn-success btn-md" type="submit"/>
             
 	</div>                       
                     <script type="text/javascript">

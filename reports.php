@@ -36,7 +36,7 @@ $division = $user_details['division'];
 <body>
 
 <header id="header">
-        <div class="top-bar" style="padding-top: 0px;">
+        <div class="top-bar" style="padding-top: 5px;">
             <div class="container">
              
             </div><!--/.container-->
@@ -59,12 +59,12 @@ $division = $user_details['division'];
                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                   <!-- <img src="images/img.jpg" class="img-circle profile_img" alt="" style="width: 50px;"></br> -->
                   <div class="profile_info">
-                    <h style="height: 10px;"><?php echo "$first_name $last_name";?></h>               <span>(<?php echo "$level";?>)</span>
+                    <h style="height: 10px;     padding-left: 50px;"><?php echo "$first_name $last_name";?></h>               <span>(<?php echo "$level";?>)</span>
                 </div>
                 </a>
               </li>
 
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav" style="padding-left: 80px;">
                         <li><a href="logout.php"  class="btn btn-success btn-md" style="padding-top: 3px; padding-bottom: 3px;">Log Out</a></li>
                     </ul>
                 </div>
@@ -77,7 +77,7 @@ $division = $user_details['division'];
         
     </header><!--/header-->
 
-    <section id="feature" class="transparent-bg" style="padding-bottom: 85px;">
+    <section id="feature" class="transparent-bg" style="    padding-bottom: 150px; padding-top: 80px;">
         <div class="container">
            <!-- <div class="center wow fadeInDown">
                <h2>University Of Colombo School Of Computing</h2>
@@ -85,24 +85,24 @@ $division = $user_details['division'];
             </div>-->
 
             <div class="row">
-                <div class="features">
+                <div class="features" style="padding-top: 30px;">
                     <!--/.col-md-4-->
                     
                
                     
         <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                    <a href="asset_movement_report.php"><div class="feature-wrap">
+                    <a href="asset_movement_report.php"><div class="feature-wrap" style="padding-left: 100px;">
                             <i class="fa fa-exchange"></i>
                             <h2>Asset Movement</h2>
-                            <h3>View how assets have moved in and out of division</h3>
+                            <h3 style="padding-left: 120px;">View how assets have moved in and out of division</h3>
                         </div>
                         </a>
                     </div>  
-    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" style="padding-left: 100px;">
                     <a href="asset_type_report.php"><div class="feature-wrap">
                             <i class="fa fa-bars"></i>
                             <h2>Asset Types</h2>
-                            <h3>View what type of assets are available</h3>
+                            <h3 style="padding-left: 120px;">View what type of assets are available</h3>
                         </div>
                         </a>
                     </div>

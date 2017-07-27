@@ -141,7 +141,7 @@ $res = $log->retrieve_new_assets($division);
             <ul class="nav navbar-nav navbar-right">
               <li class="">
                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                  <img src="images/img.jpg" alt=""><?php echo "$first_name $last_name";?>
+                  <!--img src="images/img.jpg" alt=""--><?php echo "$first_name $last_name";?>
                   <span class=" fa fa-angle-down"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -206,7 +206,8 @@ $res = $log->retrieve_new_assets($division);
 					<th align="style="justify"><strong >&nbsp;&nbsp;Asset code </strong></th>
 					<th align="style="justify"><strong >&nbsp;&nbsp;Division </strong></th>
 					<th align="style="justify"><strong >&nbsp;&nbsp;Room </strong></th>
-                                        <th align="style="justify"><strong >&nbsp;&nbsp;Moved By</strong></th>
+          <th align="style="justify"><strong >&nbsp;&nbsp;Moved By</strong></th>
+          <th align="style="justify"><strong >&nbsp;&nbsp; </strong></th>
                       
                     </thead>
 

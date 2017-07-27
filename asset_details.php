@@ -154,22 +154,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
           </div>
           <!-- /sidebar menu -->
 
-          <!-- /menu footer buttons -->
-          <div class="sidebar-footer hidden-small">
-            <a data-toggle="tooltip" data-placement="top" title="Settings">
-              <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-            </a>
-            <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-              <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-            </a>
-            <a data-toggle="tooltip" data-placement="top" title="Lock">
-              <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-            </a>
-            <a data-toggle="tooltip" data-placement="top" title="Logout">
-              <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-            </a>
-          </div>
-          <!-- /menu footer buttons -->
+          
         </div>
       </div>
 
@@ -185,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             <ul class="nav navbar-nav navbar-right">
               <li class="">
                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                  <img src="images/img.jpg" alt=""><?php echo "$first_name $last_name";?>
+                  <!--img src="images/img.jpg" alt=""--><?php echo "$first_name $last_name";?>
                   <span class=" fa fa-angle-down"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -371,7 +356,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                     <td><input type="text" class="form-control" value="<?php echo $asset_data['Purchase_Date']." - ".$asset_data['Warranty_End']?>" name="warranty"/></td></tr>
 
                                 <tr>
-                                    <td colspan="2"><input type="submit" value="Change Data"></td>
+                                    <td colspan="2"><input  class="btn btn-success btn-md " type="submit" value="Change Data"></td>
                                 </tr>
                             </form>
                             </tbody>

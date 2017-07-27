@@ -157,7 +157,7 @@ $log->refresh_assets();
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="images/img.jpg" alt=""><?php echo "$first_name $last_name";?>
+                                <!--img src="images/img.jpg" alt=""--><?php echo "$first_name $last_name";?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -259,7 +259,7 @@ $log->refresh_assets();
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2> View Assets </h2>
+                                <h2> View Denied Assets </h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -286,6 +286,7 @@ $log->refresh_assets();
                                         <th align="style="justify"><strong >&nbsp;&nbsp;Division </strong></th>
                                         <th align="style="justify"><strong >&nbsp;&nbsp;Room </strong></th>
                                         <th align="style="justify"><strong >&nbsp;&nbsp;Reason for Denial </strong></th>
+                                        <th align="style="justify"><strong >&nbsp;&nbsp;  </strong></th>
 
                                         </thead>
 

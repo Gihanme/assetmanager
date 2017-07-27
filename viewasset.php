@@ -142,22 +142,7 @@ $log->refresh_assets();
           </div>
           <!-- /sidebar menu -->
 
-          <!-- /menu footer buttons -->
-          <div class="sidebar-footer hidden-small">
-            <a data-toggle="tooltip" data-placement="top" title="Settings">
-              <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-            </a>
-            <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-              <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-            </a>
-            <a data-toggle="tooltip" data-placement="top" title="Lock">
-              <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-            </a>
-            <a data-toggle="tooltip" data-placement="top" title="Logout">
-              <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-            </a>
-          </div>
-          <!-- /menu footer buttons -->
+          
         </div>
       </div>
 
@@ -173,7 +158,7 @@ $log->refresh_assets();
             <ul class="nav navbar-nav navbar-right">
               <li class="">
                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                  <img src="images/img.jpg" alt=""><?php echo "$first_name $last_name";?>
+                  <!--img src="images/img.jpg" alt=""--><?php echo "$first_name $last_name";?>
                   <span class=" fa fa-angle-down"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -269,7 +254,7 @@ $log->refresh_assets();
                         
                         <?php 
                         if ($level == 'div_asset_clerk' ){
-                        echo '<button type="submit" formaction="move_asset.php">Move</button>';}
+                        echo '<button type="submit" formaction="move_asset.php" class="btn btn-success btn-md">Move</button>';}
                         if($level == 'dp_registrar'){
                         echo'<button type="submit"  formaction="delete_asset.php">Remove</button>';
                         

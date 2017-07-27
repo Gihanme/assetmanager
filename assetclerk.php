@@ -77,7 +77,7 @@ $division = $user_details['division'];
         
     </header><!--/header-->
 
-    <section id="feature" class="transparent-bg" style="padding-bottom: 85px;">
+    <section id="feature" class="transparent-bg" style="padding-bottom: 127px; padding-top: 80px;">
         <div class="container">
            <!-- <div class="center wow fadeInDown">
                <h2>University Of Colombo School Of Computing</h2>
@@ -113,7 +113,7 @@ $division = $user_details['division'];
                         </a>
                     </div><!--/.col-md-4-->
                     
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" style="padding-top: 20px;">
                         <a href="reports.php"><div class="feature-wrap">
                             <i class="fa fa-book"></i>
                             <h2>View Reports</h2>
