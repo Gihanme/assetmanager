@@ -70,7 +70,26 @@ $division = $user_details['division'];
                 </div>
                 
                        
-                       </ul>
+                    <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <button class="btn btn-default btn-lg btn-link" style="font-size:36px;"  onclick="window.location.href='inbox.php'">
+                        <span class="glyphicon glyphicon-comment"></span>
+                        </button>
+                        <span class="badge badge-notify"><?php echo $log->count_message($division);?></span>
+                        <style>
+                                      /* CSS used here will be applied after bootstrap.css */
+                                .badge-notify{
+                                   background:red;
+                                   position:relative;
+                                   top: -20px;
+                                   left: -35px;
+                                  }
+                        </style>
+                                       
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
