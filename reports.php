@@ -35,15 +35,15 @@ $division = $user_details['division'];
 
 <body>
 
-    <header id="header">
-        <div class="top-bar">
+<header id="header">
+        <div class="top-bar" style="padding-top: 0px;">
             <div class="container">
              
             </div><!--/.container-->
         </div><!--/.top-bar-->
-
-        <nav class="navbar navbar-inverse" role="banner">
-            <div class="container">
+        
+        <nav class="navbar navbar-inverse" role="banner" style="padding-top: 8px; height: 80px">
+            <div class="container" style="height: 60px;">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -51,31 +51,40 @@ $division = $user_details['division'];
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo" style="width: 100px;"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo.png " alt="logo" style="width: 50px;"></a>
                 </div>
 
-                <div class="collapse navbar-collapse navbar-right">
-                <li class="">
+                <div class="collapse navbar-collapse navbar-right" style="padding-right: 0px;">
+                   <!-- <li style="height: 30px;">-->
                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                  <img src="images/img.jpg" class="img-circle profile_img" alt=""></br>
+                  <!-- <img src="images/img.jpg" class="img-circle profile_img" alt="" style="width: 50px;"></br> -->
                   <div class="profile_info">
-                    <h2><?php echo "$first_name $last_name";?></h2>               <span>(<?php echo "$level";?>)</span>
+                    <h style="height: 10px;"><?php echo "$first_name $last_name";?></h>               <span>(<?php echo "$level";?>)</span>
                 </div>
                 </a>
               </li>
+
                     <ul class="nav navbar-nav">
-                        <li><a href="logout.php">Log Out</a></li>
+                        <li><a href="logout.php"  class="btn btn-success btn-md" style="padding-top: 3px; padding-bottom: 3px;">Log Out</a></li>
                     </ul>
+                </div>
+                
+                       
+                       </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
         
     </header><!--/header-->
 
-    <section id="feature" class="transparent-bg">
+    <section id="feature" class="transparent-bg" style="padding-bottom: 85px;">
         <div class="container">
-           </br>
-             <div class="row">
+           <!-- <div class="center wow fadeInDown">
+               <h2>University Of Colombo School Of Computing</h2>
+                <p class="lead">Asset Management System</p> 
+            </div>-->
+
+            <div class="row">
                 <div class="features">
                     <!--/.col-md-4-->
                     
@@ -113,7 +122,6 @@ $division = $user_details['division'];
             </div><!--/.row--> 
 
 
-
                    
 
         </div><!--/.container-->
@@ -122,17 +130,13 @@ $division = $user_details['division'];
 
    
 
-    <footer id="footer" class="midnight-blue">
+    <footer id="footer" class="midnight-blue" style=" padding-top: 15px;  padding-bottom: 15px;">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
                     &copy; 2017 UCSC All Rights Reserved.
                 </div>
-                <div class="col-sm-6">
-                    <ul class="pull-right">
-                                             
-                    </ul>
-                </div>
+                
             </div>
         </div>
     </footer><!--/#footer-->
