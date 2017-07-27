@@ -191,7 +191,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                           ?>
                       </select>
                           
-                          <input type="submit">
+                          <input class="btn btn-success btn-md" type="submit">
                       </form>
                   </div>
                 </div>

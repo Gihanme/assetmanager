@@ -77,7 +77,7 @@ $division = $user_details['division'];
         
     </header><!--/header-->
 
-    <section id="feature" class="transparent-bg" style="padding-bottom: 85px;">
+    <section id="feature" class="transparent-bg" style="padding-bottom: 100px; padding-top: 80px;">
         <div class="container">
            <!-- <div class="center wow fadeInDown">
                <h2>University Of Colombo School Of Computing</h2>
@@ -118,13 +118,13 @@ $division = $user_details['division'];
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                                            <a href="itemcategorydetails.php"><div class="feature-wrap">
+                                            <a href="itemcategorydetails.php"><div class="feature-wrap" style="padding-top: 20px;">
                             <i class="fa fa-tasks"></i>
                             <h2>Manage Asset Category</h2>
                             <h3>Add, view update and delete the asset category</h3>
                         </div>
                         </a>
-                    </div><!--/.col-md-4--><div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    </div><!--/.col-md-4--><div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" style="padding-top: 20px;">
                                             <a href="assettypedetails.php"><div class="feature-wrap">
                             <i class="fa fa-bars"></i>
                             <h2>Manage Asset Types</h2>
