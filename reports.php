@@ -106,14 +106,7 @@ $division = $user_details['division'];
                         </div>
                         </a>
                     </div>
-    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                    <a href="reevaluate.php"><div class="feature-wrap">
-                            <i class="fa fa-book"></i>
-                            <h2>Revaluation</h2>
-                            <h3>Generate report about assetes to be revaluate</h3>
-                        </div>
-                        </a>
-                    </div>              
+                
                     <br><br><br><br><br><br><br><br><br><br><br><br>
                    
                     
