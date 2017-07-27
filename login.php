@@ -96,20 +96,20 @@
         <!-- Top content -->
         <div class="top-content">
         	
-            <div class="inner-bg">
+            <div class="inner-bg" style="padding-bottom: 60px; padding-top: 60px;">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>Asset Management System</strong></h1>
+                            <h1><strong style="color: white;">Asset Management System</strong></h1>
                             <div class="description">
-							<h4><strong>University Of Colombo School Of Computing </strong></h4>
+							<h4><strong style="color: white;">University Of Colombo School Of Computing </strong></h4>
                             	
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3 form-box">
-                        	<div class="form-top">
+                        	<div class="form-top" style="  height: 115px;">
                         		<div class="form-top-left">
                         			<h3>Login</h3>
                             		
@@ -121,11 +121,11 @@
                             <div class="form-bottom">
 			                    <form role="form" action="" method="post" class="login-form">
 			                    	<div class="form-group">
-			                    		<label class="sr-only" for="form-username">Email</label>
+			                    		<label class="sr-only" for="form-username" style="border-color: black;">Email</label>
 			                        	<input type="text" name="form-email" placeholder="Email..." class="form-username form-control" id="form-username">
 			                        </div>
 			                        <div class="form-group">
-			                        	<label class="sr-only" for="form-password">Password</label>
+			                        	<label class="sr-only" for="form-password" style="border-color: black;">Password</label>
 			                        	<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
 			                        </div>
 			                        <button type="submit" class="btn">Sign in!</button>

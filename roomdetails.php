@@ -169,52 +169,7 @@ if ($user_details['user_level'] != "system_admin"){
               </li>
               
 
-              <!--<li role="presentation" class="dropdown">
-                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                  <i class="fa fa-envelope-o"></i>
-                  <span class="badge bg-green">6</span>
-                </a>
-                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                  <li>
-                    <a>
-                      <span class="image">
-                                        <img src="images/img.jpg" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>chathura</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        add a asset to the system
-                                    </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a>
-                      <span class="image">
-                                        <img src="images/img.jpg" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>chathura</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                       add a asset to the system
-                                    </span>
-                    </a>
-                  </li>
-                 
-                  
-                  <li>
-                    <div class="text-center">
-                      <a>
-                        <strong>See All Alerts</strong>
-                        <i class="fa fa-angle-right"></i>
-                      </a>
-                    </div>
-                  </li>
-                </ul>
-              </li>-->
+             
 
             </ul>
           </nav>
@@ -242,8 +197,9 @@ if ($user_details['user_level'] != "system_admin"){
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
+
                 </div>
-                <input class="" id="system-search" name="q" placeholder="Search for" required>
+                <input class="" id="system-search" name="q" placeholder="Search" required>
                     <br> <br>  
                 <table id="datatable" class="table table-striped table-list-search table-bordered sortable">
                     <thead>
@@ -254,8 +210,8 @@ if ($user_details['user_level'] != "system_admin"){
                             <th>Description</th>
                             <th>Floor</th>
                             <th>Wing</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th> </th>
+                            <th> </th>
                         
                         </tr>
                     </thead>
